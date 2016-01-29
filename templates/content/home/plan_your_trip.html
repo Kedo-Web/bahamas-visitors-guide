@@ -1,0 +1,32 @@
+<div class="section notopmargin noborder nobottommargin" >
+  <div class="container clearfix">
+    <div class="heading-block center nobottommargin">
+      <h2><perch:content id="title" type="text" label="Section Title" required="true" /></h2>
+      <span><perch:content id="description" type="text" label="Sub-heading" required="true" /></span>
+    </div>
+  </div>
+</div>
+
+<div id="portfolio" class="portfolio-3 portfolio-nomargin portfolio-notitle portfolio-full clearfix">
+  <perch:repeater id="slides" label="Slides">
+    <article class="portfolio-item pf-media pf-icons">
+      <div class="portfolio-image">
+        <a href="<perch:content id="link" type="text" label="Link" required="true" />">
+          <img src="<perch:content id="image" type="image" label="Image" required="true" width="800" />" alt="<perch:content id="industry" type="text" label="Industry" required="true" />">
+        </a>
+        <div class="portfolio-overlay">
+          <a href="<perch:content id="image" type="image" label="Image" required="true" />" class="left-icon" data-lightbox="image"><i class="fa fa-plus"></i></a>
+          <a href="<perch:content id="link" type="text" label="Link" required="true" />" class="right-icon"><i class="fa fa-ellipsis-h"></i></a>
+        </div>
+      </div>
+      <div class="portfolio-desc">
+        <h3>
+          <a href="<perch:content id="link" type="text" label="Link" required="true" />">
+            <perch:content id="industry" type="text" label="Industry" required="true" title="true" />
+          </a>
+        </h3>
+        <span><perch:content id="info" type="text" label="Industry Info" required="true" /></span>
+      </div>
+    </article>
+  </perch:repeater>
+</div>

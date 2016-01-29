@@ -1,0 +1,29 @@
+<perch:before>
+<div class="section dark notopmargin">
+  <div class="container clearfix">
+    <div class="heading-block center">
+      <h2>Recent News &amp; Updates</h2>
+    </div>
+    <div id="oc-images2" class="owl-carousel image-carousel">
+</perch:before>
+
+      <div class="oc-item">
+        <div class="ipost clearfix">
+          <div class="entry-image">
+            <a href="<perch:blog id="postURL" />"><img class="image_fade" src="<perch:blog id="image" type="image" width="400" height="300" required="true" />" alt="<perch:blog id="postTitle" />"></a>
+          </div>
+          <div class="entry-title">
+            <h4><a href="<perch:blog id="postURL" />"><perch:blog id="postTitle" /></a></h4>
+          </div>
+          <ul class="entry-meta clearfix">
+            <li><i class="fa fa-calendar"></i> <perch:blog id="postDateTime" format="%d %B %Y" /></li>
+            <li><i class="fa fa-comments"></i> <perch:blog id="postCommentCount"/></li>
+          </ul>
+        </div>
+      </div>
+
+<perch:after>
+    </div>
+  </div>
+</div>
+</perch:after>

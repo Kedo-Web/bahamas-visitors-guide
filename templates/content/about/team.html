@@ -1,0 +1,41 @@
+<div class="heading-block center">
+  <h2><perch:content id="title" type="text" label="Title" required="true" /></h2>
+  <span><perch:content id="subheading" type="textarea" label="Sub-Heading" size="xs" /></span>
+</div>
+
+<div class="row clearfix">
+
+<perch:repeater id="team-list" label="Team Members">
+  <div class="col-md-6 bottommargin">
+    <div class="team team-list clearfix">
+      <article class="portfolio-item pf-media pf-icons">
+        <div class="portfolio-image team-image">
+          <a href="<perch:content id="website" type="text" label="Website" />">
+            <img src="<perch:content id="profile" type="image" label="Profile Image" required="true" />" alt="<perch:content id="name" type="text" label="Name" required="true" />">
+          </a>
+          <div class="portfolio-overlay">
+            <div class="portfolio-desc">
+              <h3><a href="<perch:content id="website" type="text" label="Website" />"><perch:content id="name" type="text" label="Name" required="true" /></a></h3>
+            </div>
+            <a href="<perch:content id="website" type="text" label="Website" />" class="right-icon"><i class="fa fa-external-link"></i></a>
+          </div>
+        </div>
+      </article>
+
+      <div class="team-desc">
+        <div class="team-title">
+          <a href="<perch:content id="website" type="text" label="Website" />">
+            <h4><perch:content id="name" type="text" label="Name" required="true" /></h4>
+          </a>
+          <span><perch:content id="position" type="text" label="Position" required="true" /></span>
+        </div>
+        <div class="team-content">
+          <p><perch:content id="bio" type="textarea" label="Short Bio" size="xs" required="true" /></p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</perch:repeater>
+
+</div>

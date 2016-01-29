@@ -1,0 +1,26 @@
+<h4 class="uppercase center"><perch:content id="title" type="textarea" label="Title (HTML)" html="true" required="true" size="xs" /></h4>
+
+<div class="fslider testimonial testimonial-full" data-animation="fade" data-arrows="false">
+  <div class="flexslider">
+    <div class="slider-wrap">
+
+      <perch:repeater id="client-list" label="Client Testimonials">
+      <div class="slide">
+        <div class="testi-image">
+          <a href="<perch:content id="website" type="text" label="Client Website" />">
+            <img src="<perch:content id="client" type="image" label="Client Image" required="true" />" alt="<perch:content id="name" type="text" label="Client Name" required="true" />">
+          </a>
+        </div>
+        <div class="testi-content">
+          <p><perch:content id="testimonial" type="textarea" label="Client Testimonial" required="true" size="s" /></p>
+          <div class="testi-meta">
+            <perch:content id="name" type="text" label="Client Name" required="true" />
+            <span><perch:content id="company" type="text" label="Client Company" /></span>
+          </div>
+        </div>
+      </div>
+      </perch:repeater>
+
+    </div>
+  </div>
+</div>

@@ -1,0 +1,14 @@
+<div class="col_one_third">
+  <div class="widget widget_links clearfix">
+    <h4><perch:content id="title" type="text" label="Title" required="true" /></h4>
+    <ul>
+      <perch:repeater id="list" label="List of Links">
+        <li>
+          <a href="<perch:content id="link" type="text" label="Link" required="true" />">
+            <i class="fa fa-<perch:content id="font" type="text" label="Font Awesome Shortcode" required="true" /> fa-fw"></i>&nbsp; <perch:content id="link-text" type="text" label="Link Text" required="true" />
+          </a>
+        </li>
+      </perch:repeater>
+    </ul>
+  </div>
+</div>

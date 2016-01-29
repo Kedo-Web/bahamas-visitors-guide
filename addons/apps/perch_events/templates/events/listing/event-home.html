@@ -1,0 +1,28 @@
+<perch:before>
+<div id="island-home" class="container clearfix">
+  <div class="row clearfix">
+    <div class="heading-block center">
+      <h2>Upcoming Events</h2>
+    </div>
+</perch:before>
+
+    <perch:every nth-child="3">
+      <div class="col_one_third nobottommargin col_last">
+    <perch:else />
+      <div class="col_one_third nobottommargin">
+    </perch:every>
+      <div class="feature-box media-box">
+        <div class="fbox-media">
+          <img src="<perch:events id="image" type="image" label="Image" width="400" height="250" />" alt="<perch:events id="eventTitle" />">
+        </div>
+        <div class="fbox-desc">
+          <h3><perch:events id="eventTitle" /><span class="subtitle"><perch:events id="eventDateTime" format="%c" /></span></h3>
+          <p><perch:events id="eventDescHTML" type="textarea" textile="true" editor="markitup" encode="false" /></p>
+        </div>
+      </div>
+    </div>
+
+<perch:after>
+  </div>
+</div>
+</perch:after>
