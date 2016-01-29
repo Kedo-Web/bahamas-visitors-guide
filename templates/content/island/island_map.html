@@ -1,0 +1,28 @@
+<!-- Google Map ============================================= -->
+<h3><perch:content id="heading" type="text" label="Heading" required="true" /></h3>
+<div id="google-map4" style="height: 300px; margin-bottom: 20px;" class="gmap"></div>
+
+<script type="text/javascript">
+  $('#google-map4').gMap({
+    address: '<perch:content id="location" type="text" label="Island" />, Bahamas',
+    maptype: 'ROADMAP',
+    zoom: <perch:content id="zoom" type="text" label="Map Zoom" />,
+    markers: [
+      {
+        address: "<perch:content id="location" type="text" label="Island" />, Bahamas",
+        html: "<perch:content id="location" type="text" label="Island" />, Bahamas"
+      }
+    ],
+    doubleclickzoom: false,
+    controls: {
+      panControl: true,
+      zoomControl: true,
+      mapTypeControl: false,
+      scaleControl: false,
+      streetViewControl: false,
+      overviewMapControl: false
+    }
+  });
+</script>
+
+<div class="line"></div>
