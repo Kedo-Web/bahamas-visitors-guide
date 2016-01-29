@@ -1,7 +1,4 @@
 <?php
-  if (!defined('PERCH_RUNWAY'))
-    include($_SERVER['DOCUMENT_ROOT'].'/perch/runtime.php');
-
   perch_layout('global/header', array(
     'body-class' => 'stretched sticky-responsive-menu',
   ));
@@ -11,11 +8,9 @@
 <header id="header" class="sticky-style-2">
   <div class="container clearfix desktop">
     <!-- Logo ============================================= -->
-    <?php perch_content('site_logo'); ?>
+    <?php perch_content('Site Logo'); ?>
 
-    <div class="top-advert">
-      <img src="img/template/advert2.jpg" alt="Ad">
-    </div>
+    <?php perch_content('Banner Ad'); ?>
   </div>
 
   <div id="header-wrap">
@@ -46,19 +41,19 @@
   </div>
 </header><!-- #header end -->
 
-<?php perch_content('page_title'); ?>
+<?php perch_content('Page Title'); ?>
 
 <!-- Content ============================================= -->
 <section id="content">
   <div class="content-wrap">
     <div class="container clearfix">
 
-      <?php perch_content('team'); ?>
+      <?php perch_content('Team'); ?>
 
     </div>
     <div class="section topmargin-sm footer-stick">
 
-      <?php perch_content('testimonials'); ?>
+      <?php perch_content('Testimonials'); ?>
 
     </div>
   </div>

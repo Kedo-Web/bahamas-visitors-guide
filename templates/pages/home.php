@@ -1,7 +1,4 @@
 <?php
-  if (!defined('PERCH_RUNWAY'))
-    include($_SERVER['DOCUMENT_ROOT'].'/bvg-admin/runtime.php');
-
   perch_layout('global/header', array(
     'body-class' => 'stretched sticky-responsive-menu',
   ));

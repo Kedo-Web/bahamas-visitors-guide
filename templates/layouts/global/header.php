@@ -1,3 +1,4 @@
+<?php if (!defined('PERCH_RUNWAY')) include($_SERVER['DOCUMENT_ROOT'].'/bvg-admin/runtime.php'); ?>
 <!doctype html>
 <html lang="en-us">
   <head>

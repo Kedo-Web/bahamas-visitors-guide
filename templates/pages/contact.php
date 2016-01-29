@@ -1,7 +1,4 @@
 <?php
-  if (!defined('PERCH_RUNWAY'))
-    include($_SERVER['DOCUMENT_ROOT'].'/perch/runtime.php');
-
   perch_layout('global/header', array(
     'body-class' => 'stretched sticky-responsive-menu',
     'facebook-feed' => 'fb-root',
@@ -12,11 +9,9 @@
 <header id="header" class="sticky-style-2">
   <div class="container clearfix desktop">
     <!-- Logo ============================================= -->
-    <?php perch_content('site_logo'); ?>
+    <?php perch_content('Site Logo'); ?>
 
-    <div class="top-advert">
-      <img src="img/template/advert2.jpg" alt="Ad">
-    </div>
+    <?php perch_content('Banner Ad'); ?>
   </div>
 
   <div id="header-wrap">
@@ -25,7 +20,7 @@
       <div class="container clearfix">
         <a id="mmenu-btn" href="#mobile-menu" class="hideDesktop"><i class="fa fa-navicon"></i></a>
         <a id="mobile-menu-logo" href="index.html">
-          <img src="/perch/extras/img/template/bvg-logo.png" alt="Bahamas Visitor's Guide Logo">
+          <img src="/bvg-admin/extras/img/template/bvg-logo.png" alt="Bahamas Visitor's Guide Logo">
         </a>
         <?php perch_pages_navigation(array(
           'navgroup' =>'top-menu',
@@ -47,7 +42,7 @@
   </div>
 </header><!-- #header end -->
 
-<?php perch_content('page_title'); ?>
+<?php perch_content('Page Title'); ?>
 
 <!-- Content ============================================= -->
 <section id="content">
@@ -67,7 +62,7 @@
       ============================================= -->
       <div class="sidebar col_last nobottommargin">
 
-        <?php perch_form('location.html'); ?>
+        <?php perch_content('Contact Location'); ?>
 
         <div class="widget noborder notoppadding">
           <div class="fb-page" data-href="https://www.facebook.com/Bahamas-Visitors-Guide-120321671341479/" data-tabs="timeline" data-width="240" data-height="450" data-small-header="true" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"></div>
