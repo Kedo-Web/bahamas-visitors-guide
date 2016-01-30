@@ -1,0 +1,9 @@
+<div id="oc-images" class="owl-carousel image-carousel">
+  <perch:repeater id="small-gallery" label="Small Gallery">
+  <div class="oc-item">
+    <a href="<perch:content id="image" type="image" label="Image" required="true" />" data-lightbox="image"><img src="<perch:content id="image" type="image" label="Image" width="400" height="300" required="true" />" alt="<perch:content id="text" type"text" label="Image Name" />"></a>
+  </div>
+  </perch:repeater>
+</div>
+
+<div class="line"></div>
