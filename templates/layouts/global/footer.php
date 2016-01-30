@@ -44,7 +44,8 @@
 <nav id="mobile-menu" class="hideDesktop">
   <?php perch_pages_navigation(array(
     'navgroup' => 'mobile-menu',
-    'levels' => 4
+    'levels' => 4,
+    'flat' => false
   )); ?>
 </nav>
 
