@@ -47,6 +47,9 @@ body.top-search-open #primary-menu>.container>#mobile-menu-logo { opacity: 0; }
 .menu-title .breadcrumb a:hover { color: #000; }
 .pre-submenu { float: left; margin-left: 77%; color: #fff; }
 .ancestor i.fa { margin-left: 5px; }
+.entry-meta { margin-bottom: 0px; margin-top:0px; }
+.entry-meta li { margin-bottom: 5px; margin-top: 5px; }
+.ipost .entry-content { margin-top: 5px; }
 
 /* =================================================
     Full Size Tablet

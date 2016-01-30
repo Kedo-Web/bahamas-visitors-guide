@@ -1,0 +1,32 @@
+<div class="ipost clearfix bottommargin-sm">
+  <div class="col_half nobottommargin">
+    <div class="entry-image">
+      <a href="<perch:content id="link" type="text" label="Link" required="true"/>">
+        <img class="image_fade" src="<perch:content id="image" type="image" label="Image" required="true" />" alt="Image">
+      </a>
+    </div>
+  </div>
+  <div class="col_half nobottommargin col_last">
+    <div class="entry-title">
+      <h3>
+        <a href="<perch:content id="link" type="text" label="Link" required="true"/>">
+          <perch:content id="listing-title" type="text" label="Listing Title" required="true" />
+        </a>
+      </h3>
+    </div>
+    <ul class="entry-meta clearfix">
+      <li><i class="fa fa-map-marker"></i> <perch:content id="location" type="text" label="Location/Area" required="true"/></li>
+      <perch:repeater id="contact-number" label="Phone Numbers">
+        <li><i class="fa fa-phone"></i> <perch:content id="phone" type="text" label="Phone Number"/></li>
+      </perch:repeater>
+    </ul>
+    <ul class="entry-meta clearfix">
+      <li><i class="fa fa-envelope-o"></i><a href="mailto:<perch:content id="email" type="text" label="E-mail"/>"> <perch:content id="email" type="text" label="E-mail"/></a></li>
+    </ul>
+    <div class="entry-content">
+      <p><perch:content id="description" type="textarea" label="Description"/></p>
+    </div>
+  </div>
+</div>
+
+<div class="line"></div>
