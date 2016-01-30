@@ -75,6 +75,7 @@
         <div class="hideDesktop">
           <?php perch_pages_breadcrumbs(); ?>
         </div>
+        <h2><?php perch_content('Page Title'); ?></h2>
         <?php perch_content('Content Area 1'); ?>
         <?php perch_content('Content Area 2'); ?>
         <?php perch_content('Content Area 3'); ?>
