@@ -52,14 +52,14 @@
         <?php perch_pages_breadcrumbs(); ?>
       </div>
 
+      <span class="pre-submenu">Jump to : </span>
+
       <nav>
         <?php perch_pages_navigation(array(
           'navgroup' =>'submenu',
           'levels' => 2
         )); ?>
       </nav>
-
-      <div id="page-submenu-trigger"><i class="icon-reorder"></i></div>
 
     </div>
   </div>
