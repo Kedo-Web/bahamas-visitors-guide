@@ -9,6 +9,11 @@
     <link href="/bvg-admin/addons/assets/css/font-awesome.min.css" rel="stylesheet">
     <link href="/bvg-admin/addons/assets/css/vendor.css" rel="stylesheet">
     <link href="/bvg-admin/addons/assets/css/main.css" rel="stylesheet">
+    <?php
+      if (perch_layout_has('css-calendar')) {
+        echo '<link href="/bvg-admin/addons/assets/css/calendar.css" rel="stylesheet">';
+      }
+    ?>
     <link rel="shortcut icon" type="image/ico" href="/bvg-admin/extras/img/template/favicon.jpg" />
   </head>
   <?php
