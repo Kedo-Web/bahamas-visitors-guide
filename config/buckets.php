@@ -7,14 +7,14 @@
     ),
     'template' => array(
       'web_path'  => '/bvg-admin/extras/img/template',
-      'file_path' => '/home/public_html/bvg-admin/extras/img/template'
+      'file_path' => '/Applications/MAMP/htdocs//bvg-admin/extras/img/template'
     ),
     'home' => array(
       'web_path'  => '/bvg-admin/extras/img/home',
-      'file_path' => '/home/public_html/bvg-admin/extras/img/home'
+      'file_path' => '/Applications/MAMP/htdocs//bvg-admin/extras/img/home'
     ),
     'about' => array(
       'web_path'  => '/bvg-admin/extras/img/about',
-      'file_path' => '/home/public_html/bvg-admin/extras/img/about'
+      'file_path' => '/Applications/MAMP/htdocs//bvg-admin/extras/img/about'
     )
   );
