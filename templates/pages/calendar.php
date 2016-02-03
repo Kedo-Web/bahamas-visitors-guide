@@ -49,9 +49,11 @@
   <div class="content-wrap">
     <div class="container clearfix">
 
-      <?php perch_events_calendar(array(
-        'calendar-template'  => 'events/calendar/month_view_calendar.html'
-      )); ?>
+      <?php
+        perch_events_calendar(array(
+          'calendar-template'  => 'events/calendar/month_view_calendar.html',
+        ));
+      ?>
 
     </div>
   </div>
