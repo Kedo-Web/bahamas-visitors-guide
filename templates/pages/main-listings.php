@@ -56,7 +56,7 @@
 
       <nav>
         <?php perch_pages_navigation(array(
-          'navgroup' =>'submenu',
+          'navgroup' => 'secondary-menu',
           'levels' => 2
         )); ?>
       </nav>
@@ -86,11 +86,16 @@
           // ));
         ?>
         <?php
-          $page = perch_pages_title();
-          if ($page == )
-          perch_content_custom('Listing', array(
-            'template' => 'listing.html',
+          $collection = perch_page_attribute('collection');
+          perch_collection($collection, array(
+            'template' => 'main/collection_listings.html',
+            'sort-order' => 'RAND',
+            'count' => 5,
+            'paginate' => true,
           ));
+          if (perch_page_attribute('categories')) {
+
+          }
         ?>
         <?php perch_content('Content Area 2'); ?>
         <?php perch_content('Content Area 3'); ?>

@@ -4,7 +4,11 @@
   <head>
     <meta charset="utf-8" />
   	<title><?php perch_pages_title(); ?></title>
-  	<?php perch_page_attributes(); ?>
+  	<?php
+      perch_page_attribute('description');
+      perch_page_attribute('keywords');
+      perch_page_attribute('robots');
+    ?>
     <link href="http://fonts.googleapis.com/css?family=Lato:300,400,400italic,600,700|Raleway:300,400,500,600,700|Crete+Round:400italic" rel="stylesheet" type="text/css" />
     <link href="/bvg-admin/addons/assets/css/font-awesome.min.css" rel="stylesheet">
     <link href="/bvg-admin/addons/assets/css/vendor.css" rel="stylesheet">
