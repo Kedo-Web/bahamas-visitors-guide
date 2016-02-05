@@ -54,15 +54,17 @@
 
 <!-- Scripts ============================================= -->
 <script type="text/javascript" src="/bvg-admin/addons/assets/js/jquery.js"></script>
+<script type="text/javascript" src="/bvg-admin/addons/assets/js/plugins.js"></script>
 <script type="text/javascript" src="/bvg-admin/addons/assets/js/jquery.mmenu.min.all.js"></script>
-<script type="text/javascript" src="/bvg-admin/addons/assets/js/vendor-min.js"></script>
+<script type="text/javascript" src="/bvg-admin/addons/assets/js/functions.js"></script>
+<script type="text/javascript" src="/bvg-admin/addons/assets/js/main.js"></script>
 <?php
   if (perch_layout_has('calendar')) {
     echo '<script type="text/javascript" src="/bvg-admin/addons/assets/js/jquery.calendario.js"></script>';
     echo '<script type="text/javascript" src="/bvg-admin/addons/assets/js/events-data.js"></script>';
   }
 ?>
-<script type="text/javascript" src="/bvg-admin/addons/assets/js/main.js"></script>
+
 
 </body>
 </html>
