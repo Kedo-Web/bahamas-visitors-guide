@@ -1,24 +1,8 @@
-<section id="slider" class="swiper_wrapper full-screen clearfix">
-
-	<div class="swiper-container swiper-parent">
-		<div class="swiper-wrapper">
-      <perch:repeater id="slides" label="Slides">
-        <div class="swiper-slide" style="background-image: url('<perch:content id="slide" type="image" label="Image" required="true" />');">
-          <div class="container clearfix">
-  					<div class="slider-caption slider-caption-center">
-  						<h2 data-caption-animate="fadeInUp"><perch:content id="heading" type="text" label="Heading" /></h2>
-  						<p data-caption-animate="fadeInUp" data-caption-delay="200"><perch:content id="caption" type="textarea" label="Caption Text" /></p>
-  					</div>
-  				</div>
-        </div>
-      </perch:repeater>
+<div class="swiper-slide" style="background-image: url('<perch:content id="slide" type="image" label="Image" required="true" />');">
+  <div class="container clearfix">
+		<div class="slider-caption slider-caption-center">
+			<h2 data-caption-animate="fadeInUp"><perch:content id="heading" type="text" label="Heading" /></h2>
+			<p data-caption-animate="fadeInUp" data-caption-delay="200"><perch:content id="caption" type="textarea" label="Caption Text" /></p>
 		</div>
-		<div id="slider-arrow-left"><i class="fa fa-angle-left"></i></div>
-		<div id="slider-arrow-right"><i class="fa fa-angle-right"></i></div>
 	</div>
-
-	<a href="#" data-scrollto="#content" data-offset="100" class="one-page-arrow">
-    <i class="fa fa-angle-down infinite animated fadeInDown"></i>
-  </a>
-
-</section>
+</div>

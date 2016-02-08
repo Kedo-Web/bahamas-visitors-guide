@@ -36,7 +36,24 @@
 	</div>
 </header><!-- #header end -->
 
-<?php perch_content('Home Page Slider'); ?>
+<!-- Slider Hero ============================================= -->
+<section id="slider" class="swiper_wrapper full-screen clearfix">
+
+  <div class="swiper-container swiper-parent">
+    <div class="swiper-wrapper">
+      <?php perch_content('Home Page Slider'); ?>
+    </div>
+
+    <div id="slider-arrow-left"><i class="fa fa-angle-left"></i></div>
+    <div id="slider-arrow-right"><i class="fa fa-angle-right"></i></div>
+  </div>
+
+  <a href="#" data-scrollto="#content" data-offset="100" class="one-page-arrow">
+    <i class="fa fa-angle-down infinite animated fadeInDown"></i>
+  </a>
+
+</section>
+
 
 <!-- Content ============================================= -->
 <section id="content">
@@ -76,5 +93,7 @@
 </section>
 
 <?php
-  perch_layout('global/footer');
+  perch_layout('global/footer', array(
+    'slider' => true,
+  ));
 ?>
