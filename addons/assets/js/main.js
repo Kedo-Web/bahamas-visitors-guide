@@ -53,7 +53,7 @@ $("#template-contactform").validate({
     Home Page
 ============================================================== */
 // Hero Slider Script
-jQuery(document).ready(function($){
+jQuery(window).load(function(){
   var swiperSlider = new Swiper('.swiper-parent',{
     paginationClickable: false,
     slidesPerView: 1,
@@ -91,7 +91,7 @@ jQuery(document).ready(function($){
       });
       $('#slider').find('.swiper-slide:not(".swiper-slide-active")').each(function(){
         if($(this).find('video').length > 0) {
-          if($(this).find('video').get(0).currentTime != 0 ) $(this).find('video').get(0).currentTime = 0;
+          if($(this).find('video').get(0).currentTime !== 0 ) $(this).find('video').get(0).currentTime = 0;
         }
         if($(this).find('.yt-bg-player').length > 0) {
           $(this).find('.yt-bg-player').getPlayer().seekTo( $(this).find('.yt-bg-player').attr('data-start') );
@@ -227,8 +227,7 @@ $('nav#mobile-menu').mmenu({
         "<a class='fa fa-facebook' href='#/'></a>",
         "<a class='fa fa-twitter' href='#/'></a>",
         "<a class='fa fa-google-plus' href='#/'></a>",
-        "<a class='fa fa-instagram' href='#/'></a>",
-        "<a class='fa fa-wordpress' href='#/'></a>"
+        "<a class='fa fa-instagram' href='#/'></a>"
       ]
     }
   ]
