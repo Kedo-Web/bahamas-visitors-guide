@@ -78,23 +78,26 @@
         <h2><?php perch_content('Page Title'); ?></h2>
         <?php perch_content('Content Area 1'); ?>
         <?php
-          // perch_collection('Acklins', array(
-          //   'template' => 'listing.html',
-          //   'sort-order' => 'RAND',
-          //   'count' => 5,
-          //   'paginate' => true,
-          // ));
-        ?>
-        <?php
-          $collection = perch_page_attribute('collection');
-          perch_collection($collection, array(
-            'template' => 'main/collection_listings.html',
-            'sort-order' => 'RAND',
-            'count' => 5,
-            'paginate' => true,
-          ));
-          if (perch_page_attribute('categories')) {
+          $collection = perch_page_attribute('collection', [], true);
+          $category = perch_page_attribute('categories', [], true);
 
+          if ($collection) {
+            perch_collection($collection, array(
+              'template' => 'main/collection_listings.html',
+              'sort-order' => 'RAND',
+              'count' => 5,
+              'paginate' => true,
+              'category' => $category,
+            ));
+          }
+          else {
+            perch_content_custom('Category', array(
+              'template' => 'main/collection_listings.html',
+              'sort-order' => 'RAND',
+              'count' => 5,
+              'paginate' => true,
+              'category' => $category,
+            ));
           }
         ?>
         <?php perch_content('Content Area 2'); ?>
