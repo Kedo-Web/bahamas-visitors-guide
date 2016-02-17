@@ -77,6 +77,36 @@
         </div>
         <h2><?php perch_content('Page Title'); ?></h2>
         <?php perch_content('Content Area 1'); ?>
+        <?php
+          $collection = perch_page_attribute('collection', [], true);
+          $category = perch_page_attribute('category', [], true);
+          $subcategory = perch_page_attribute('subcategory', [], true);
+          // print_r($collection);
+          // print_r($category);
+          // print_r($subcategory);
+
+          if ($collection) {
+            perch_collection('Listings', array(
+              'template' => 'main/collection_listings.html',
+              'sort-order' => 'RAND',
+              'count' => 5,
+              'paginate' => true,
+              'filter' => 'islands.name',
+              'match' => 'eq',
+              'value' => 'Acklins',
+              'category' => 'industry/'.$category,
+            ));
+          }
+          else {
+            perch_collection('Listings', array(
+              'template' => 'main/collection_listings.html',
+              'sort-order' => 'RAND',
+              'count' => 5,
+              'paginate' => true,
+              'category' => 'industry/'.$category.'/'.$subcategory,
+            ));
+          }
+        ?>
         <?php perch_content('Content Area 2'); ?>
         <?php perch_content('Content Area 3'); ?>
         <?php perch_content('Content Area 4'); ?>
@@ -88,7 +118,17 @@
       <div class="sidebar nobottommargin col_last clearfix">
         <div class="sidebar-widgets-wrap">
           <div class="widget widget_links clearfix">
-
+            <nav>
+              <?php
+                $navgroup = perch_page_attribute('navgroup', [], true);
+                if($navgroup) {
+                  perch_pages_navigation(array(
+                    'navgroup' => $navgroup,
+                    'template' => 'sidebar_menu.html',
+                  ));
+                }
+              ?>
+            </nav>
             <?php perch_content('Sidebar Area 1'); ?>
             <?php perch_content('Sidebar Area 2'); ?>
             <?php perch_content('Sidebar Area 3'); ?>

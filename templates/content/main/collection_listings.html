@@ -27,7 +27,12 @@
       <p><perch:content id="description" type="textarea" label="Description" size="xs" /></p>
     </div>
 
-    <perch:categories id="categories" label="Industry" set="industry" required="true" display-as="checkboxes">
+    <perch:related id="islands" collection="Islands" label="Island" required="true">
+      <p style="display:none;"><perch:content id="name" /></p>
+    </perch:related>
+
+    <perch:categories id="categories" label="Industry" set="industry" required="true">
+    </perch:categories>
 
   </div>
 </div>

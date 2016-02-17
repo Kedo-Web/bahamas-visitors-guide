@@ -61,9 +61,6 @@
     echo '<script type="text/javascript" src="/bvg-admin/addons/assets/js/jquery.calendario.js"></script>';
     echo '<script type="text/javascript" src="/bvg-admin/addons/assets/js/events-data.js"></script>';
   }
-  elseif (perch_layout_has('slider')) {
-    echo '<script type="text/javascript" src="/bvg-admin/addons/assets/js/canvas.slider.fade.js"></script>';
-  }
 ?>
 <script type="text/javascript" src="/bvg-admin/addons/assets/js/main.js"></script>
 
