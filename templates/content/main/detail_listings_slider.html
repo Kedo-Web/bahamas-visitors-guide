@@ -1,0 +1,12 @@
+<!-- Detail Listing Images ============================================= -->
+<div class="col_full portfolio-single-image">
+  <div class="fslider" data-arrows="true" data-animation="slide">
+    <div class="flexslider">
+      <div class="slider-wrap">
+        <perch:repeater>
+        <div class="slide"><a href="<perch:content id="link" type="text" label="Link" />"><img src="<perch:content id="image" type="image" label="Slider Image" required="true" />" alt="<perch:content id="alt-text" type="text" label="Image Name" required="true" />"></a></div>
+        </perch:repeater>
+      </div>
+    </div>
+  </div>
+</div>

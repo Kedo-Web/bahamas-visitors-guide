@@ -48,14 +48,26 @@
   <div class="content-wrap">
     <div class="container clearfix">
 
-      <?php perch_content('Team'); ?>
+      <?php perch_content('Detail Slider'); ?>
+
+      <div class="left-detail nobottommargin">
+        <?php perch_content('Contact Information'); ?>
+        <?php perch_content('Features'); ?>
+      </div>
+
+      <div class="right-detail portfolio-single-content col_last nobottommargin">
+        <?php perch_content('Description'); ?>
+      </div>
+
+      <div class="clear"></div>
+      <!-- <div class="divider divider-center"><i class="fa fa-circle"></i></div> -->
 
     </div>
-    <div class="section topmargin-sm footer-stick">
-
-      <?php perch_content('Testimonials'); ?>
-
-    </div>
+    <!-- <div class="section topmargin-sm footer-stick"> -->
+      <?php
+      // perch_content('Extra Section'); 
+      ?>
+    <!-- </div> -->
   </div>
 
 </section><!-- #content end -->

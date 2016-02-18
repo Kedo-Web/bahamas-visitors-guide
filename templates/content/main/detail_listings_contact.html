@@ -1,0 +1,21 @@
+<!-- Detail Listing Contact Info ============================================= -->
+<div class="panel panel-default events-meta">
+  <div class="panel-body">
+    <ul class="portfolio-meta nobottommargin">
+      <perch:repeater>
+      <li>
+        <span>
+          <i class="fa fa-<perch:content id="icon" type="select" label="Type of Info" options="Contact Person|user, Phone|phone, Email|envelope, Website|link" />"></i><perch:content id="label" type="text" label="Info Label" required="true" />
+        </span>
+        <perch:if id="icon" value="link">
+          <a href="<perch:content id="info" type="text" label="Information" required="true" />">
+            <perch:content id="info" type="text" label="Information" required="true" />
+          </a>
+        <perch:else>
+          <perch:content id="info" type="text" label="Information" required="true" />
+        </perch:if>
+      </li>
+      </perch:repeater>
+    </ul>
+  </div>
+</div>
