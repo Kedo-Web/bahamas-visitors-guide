@@ -65,7 +65,7 @@
     </div>
     <!-- <div class="section topmargin-sm footer-stick"> -->
       <?php
-      // perch_content('Extra Section'); 
+      // perch_content('Extra Section');
       ?>
     <!-- </div> -->
   </div>
