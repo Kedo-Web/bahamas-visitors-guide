@@ -1,0 +1,26 @@
+<div class="entry clearfix">
+  <div class="entry-image">
+    <a href="<perch:events id="eventLink" />">
+      <img src="<perch:events id="image" />" alt="<perch:events id="eventTitle" />">
+      <div class="entry-date"><perch:events id="eventDateTime" format="j" /><span><perch:events id="eventDateTime" format="M" /></span></div>
+    </a>
+  </div>
+  <div class="entry-c">
+    <div class="entry-title">
+      <h2><a href="<perch:events id="eventLink" />"><perch:events id="eventTitle" /></a></h2>
+    </div>
+    <ul class="entry-meta clearfix">
+      <perch:if id="eventInvite" value="Public">
+      <li><span class="label label-info"><perch:events id="eventInvite" /></span></li>
+      <perch:else />
+      <li><span class="label label-warning"><perch:events id="eventInvite" /></span></li>
+      </perch:if>
+      <li><i class="fa fa-clock-o"></i> <perch:events id="eventDateTime" format="g a" /></li>
+      <li><i class="fa fa-map-marker"></i> <perch:events id="eventLocation" /></li>
+    </ul>
+    <div class="entry-content">
+      <p><perch:events id="eventShortDescHTML" encode="false" /></p>
+      <a href="<perch:events id="eventLink" />" class="btn btn-danger">Read More</a>
+    </div>
+  </div>
+</div>

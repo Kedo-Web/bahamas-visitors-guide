@@ -51,6 +51,8 @@ body.top-search-open #primary-menu>.container>#mobile-menu-logo { opacity: 0; }
 .entry-meta li { margin-bottom: 5px; margin-top: 5px; }
 .ipost .entry-content { margin-top: 5px; }
 
+#page-menu nav.left { float: left; }
+
 /* =================================================
     Full Size Tablet
 ================================================= */

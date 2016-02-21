@@ -3,17 +3,15 @@
 
     <p class="dtstart"><span class="value-title" title="<perch:events id="eventDateTime" format="c" />"><perch:events id="eventDateTime" format="%c" /></span></p>
 
-    <div class="description"><perch:events id="eventDescHTML" type="textarea" textile="true" editor="markitup" encode="false" /></div>
+    <div class="description"><perch:events id="eventDescHTML" type="textarea" textile="true" editor="markitup" encode="false" size="m" /></div>
+    <div class="description"><perch:events id="eventShortDescHTML" type="textarea" label="Short Description" textile="true" editor="markitup" encode="false" size="xs" required="true" /></div>
 
     <p class="category"><perch:events id="category_names" encode="false" /></p>
+
+    <p><perch:events id="eventInvite" type="select" label="Invitation" options="Public, Private" /></p>
+    <p><perch:events id="eventLocation" type="text" label="Location" required="true" /></p>
 
     <perch:if exists="image">
         <img src="<perch:events id="image" type="image" label="Image" width="640" crop="true" />" alt="<perch:events id="eventTitle" />" />
     </perch:if>
 </div>
-
-<script type="text/javascript">
-cal.setData( {
-  '<perch:content id="event-date" type="date" format="m-d-Y"/>' : '<a href="#"><perch:content id="eventTitle" type="text" /></a>',
-} );
-</script>
