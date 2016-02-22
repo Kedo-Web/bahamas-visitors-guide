@@ -75,7 +75,48 @@
           case 'Acklins':
             $category = 'acklins';
             break;
-
+          case 'Andros':
+            $category = 'andros';
+            break;
+          case 'Berry Islands':
+            $category = 'berry-islands';
+            break;
+          case 'Bimini':
+            $category = 'bimini';
+            break;
+          case 'Cat Island':
+            $category = 'cat-island';
+            break;
+          case 'Crooked Island':
+            $category = 'crooked-island';
+            break;
+          case 'Eleuthera':
+            $category = 'eleuthera';
+            break;
+          case 'Exuma':
+            $category = 'exuma';
+            break;
+          case 'Grand Bahama':
+            $category = 'grand-bahama';
+            break;
+          case 'Inagua':
+            $category = 'inagua';
+            break;
+          case 'Long Island':
+            $category = 'long-island';
+            break;
+          case 'Mayaguana':
+            $category = 'mayaguana';
+            break;
+          case 'New Providence':
+            $category = 'new-providence';
+            break;
+          case 'Rum Cay':
+            $category = 'rum-cay';
+            break;
+          case 'San Salvador':
+            $category = 'san-salvador';
+            break;
           default:
             $category = 'all-islands';
             break;
@@ -83,7 +124,7 @@
         perch_events_custom(array(
           'count'	   		=> 5,
           'sort'				=> 'eventDateTime',
-          'sort-order' 	=> 'DESC',
+          'sort-order' 	=> 'ASC',
           'template' 		=> 'events/listing/events-listings.html',
           'category'    =>  $category,
         ));
