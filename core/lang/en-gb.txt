@@ -802,5 +802,12 @@
     "Password rules: That password has too many upper case characters. Mix it up a bit.": "Password rules: That password has too many upper case characters. Mix it up a bit.",
     "Password rules: That password has too many special characters. Mix it up a bit.": "Password rules: That password has too many special characters. Mix it up a bit.",
     "Password rules: That password has too many lower case characters. Mix it up a bit.": "Password rules: That password has too many lower case characters. Mix it up a bit.",
-    "Repeat the password": "Repeat the password"
+    "Repeat the password": "Repeat the password",
+    "Are you sure you wish to delete this role?": "Are you sure you wish to delete this role?",
+    "Deleting a Role": "Deleting a Role",
+    "Are you sure you wish to delete the %s role?": "Are you sure you wish to delete the %s role?",
+    "Choose a different role for users to be transferred to.": "Choose a different role for users to be transferred to.",
+    "Transfer users to": "Transfer users to",
+    "Delete role": "Delete role",
+    "Media": "Media"
 }
