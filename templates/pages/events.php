@@ -125,6 +125,9 @@
           'count'	   		=> 5,
           'sort'				=> 'eventDateTime',
           'sort-order' 	=> 'ASC',
+          'filter'      => 'eventDateTime',
+          'match'       => 'gt',
+          'value'       => date('Y-m-d H:i:s'),
           'template' 		=> 'events/listing/events-listings.html',
           'category'    =>  $category,
         ));
