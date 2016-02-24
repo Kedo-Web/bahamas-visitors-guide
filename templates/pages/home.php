@@ -83,7 +83,10 @@
 			perch_events_custom(array(
 				'count'	   		=> 3,
 				'sort'				=> 'eventDateTime',
-				'sort-order' 	=> 'DESC',
+				'sort-order' 	=> 'ASC',
+        'filter'      => 'eventDateTime',
+        'match'       => 'gt',
+        'value'       => date('Y-m-d H:i:s'),
 				'template' 		=> 'events/listing/event-home.html'
 			));
 		?>
