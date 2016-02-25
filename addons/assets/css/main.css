@@ -52,6 +52,13 @@ body.top-search-open #primary-menu>.container>#mobile-menu-logo { opacity: 0; }
 .ipost .entry-content { margin-top: 5px; }
 
 #page-menu nav.left { float: left; }
+.input-group.btn-group .btn { width: 350px; }
+.input-group .valueOfButton { float: left; color: #666666; }
+.input-group .caret { float: right; margin-top: 8px; color: #666666; }
+.input-group .valueOfButton .selected { color: #999; }
+#quick-contact-form-submit { padding-left: 20px; padding-right: 20px; }
+.input-group li { padding: 5px 10px; width: 350px; border-bottom: 1px solid #444; color:  }
+.input-group li:last-child { border: none; }
 
 /* =================================================
     Full Size Tablet
