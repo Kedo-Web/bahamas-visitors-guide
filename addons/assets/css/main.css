@@ -60,6 +60,9 @@ body.top-search-open #primary-menu>.container>#mobile-menu-logo { opacity: 0; }
 .input-group li { padding: 5px 10px; width: 350px; border-bottom: 1px solid #444; color:  }
 .input-group li:last-child { border: none; }
 
+.events .entry-image .entry-date { width: 300px; height: 180px; font-size: 90px; position: static; }
+.events .entry-image .entry-date span { font-size: 45px; }
+
 /* =================================================
     Full Size Tablet
 ================================================= */
