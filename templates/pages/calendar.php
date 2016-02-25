@@ -19,8 +19,8 @@
     <nav id="primary-menu" class="style-2">
       <div class="container clearfix">
         <a id="mmenu-btn" href="#mobile-menu" class="hideDesktop"><i class="fa fa-navicon"></i></a>
-        <a id="mobile-menu-logo" href="index.html">
-          <img src="/perch/extras/img/template/bvg-logo.png" alt="Bahamas Visitor's Guide Logo">
+        <a id="mobile-menu-logo" href="/">
+          <img src="/bvg-admin/extras/img/template/bvg-logo.png" alt="Bahamas Visitor's Guide Logo">
         </a>
         <?php perch_pages_navigation(array(
           'navgroup' =>'top-menu',
