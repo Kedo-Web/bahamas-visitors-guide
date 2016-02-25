@@ -118,6 +118,7 @@
       <div class="sidebar nobottommargin col_last clearfix">
         <div class="sidebar-widgets-wrap">
           <div class="widget widget_links clearfix">
+            <h4>Things to Know</h4>
             <nav>
               <?php
                 $navgroup = perch_page_attribute('navgroup', [], true);
