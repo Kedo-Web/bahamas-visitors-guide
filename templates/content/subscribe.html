@@ -1,0 +1,52 @@
+<perch:before>
+  <form id="form1" name="form1" class="nobottommargin" method="post" action="fpp/index.php">
+    <input type="hidden" name="fpp_form" value="subscribe_form" />
+    <table width="500" height="293" border="0" align="center" cellpadding="0" cellspacing="0" class="deviceWidth">
+      <tr>
+        <td height="150" valign="top" align="center" class="hideMobile">
+          <a href="/">
+            <img name="" src="/bvg-admin/extras/img/template/bvg-logo.png" width="300" alt="Bahamas Visitor's Guide" />
+          </a>
+        </td>
+      </tr>
+      <tr>
+        <td height="50" valign="top" align="center">
+          <input name="name" type="text" id="textfield2" size="50" class="form-control" placeholder="Name" />
+        </td>
+      </tr>
+      <tr>
+        <td height="50" valign="top" align="center">
+          <input name="email" type="text" id="textfield" size="50" class="form-control" placeholder="Email" />
+        </td>
+      </tr>
+      <tr>
+        <td height="50" valign="top" align="center">
+          <input name="address" type="text" id="textfield3" size="45" class="form-control" placeholder="Address" />
+        </td>
+      </tr>
+      <tr>
+        <td height="50" valign="top" align="center">
+          <span>Choose the island you'd like to receive a Newsletter</span>
+          <select name="island" id="islands2" class="form-control">
+            <option value="">Choose Island</option>
+</perch:before>
+
+<perch:repeater>
+<option value="<perch:content id="island" type="select" label="Island" options="Abaco, Acklins, Andros, Berry Islands, Bimini, Cat Island, Crooked Island, Eleuthera, Exuma, Grand Bahama, Inagua, Long Island, Mayaguana, New Providence, Rum Cay, San Salvador" />">
+  <perch:content id="island" type="select" label="Island" options="Abaco, Acklins, Andros, Berry Islands, Bimini, Cat Island, Crooked Island, Eleuthera, Exuma, Grand Bahama, Inagua, Long Island, Mayaguana, New Providence, Rum Cay, San Salvador" />
+</option>
+</perch:repeater>
+
+<perch:after>
+          </select>
+          <br />
+        </td>
+      </tr>
+      <tr>
+        <td height="39" valign="top" align="center">
+          <input type="submit" name="Sign Up!2" id="Sign Up!2" value="Subscribe" class="button button-3d button-black nomargin" />
+        </td>
+      </tr>
+    </table>
+  </form>
+</perch:after>

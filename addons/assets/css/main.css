@@ -63,6 +63,10 @@ body.top-search-open #primary-menu>.container>#mobile-menu-logo { opacity: 0; }
 .events .entry-image .entry-date { width: 300px; height: 180px; font-size: 90px; position: static; }
 .events .entry-image .entry-date span { font-size: 45px; }
 
+/* Subscribe  ==== */
+#subscribe { margin-top: 40px; }
+/* =============== */
+
 /* =================================================
     Full Size Tablet
 ================================================= */
@@ -105,4 +109,5 @@ body.top-search-open #primary-menu>.container>#mobile-menu-logo { opacity: 0; }
   #mmenu-btn-home, #mmenu-btn { left: 0; }
   #mobile-menu-logo { width: 188px; padding-top: 10px; }
   #mobile-menu-logo img { height: 75px; }
+  .deviceWidth { width: 100%; }
 }

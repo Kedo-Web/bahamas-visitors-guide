@@ -234,20 +234,6 @@ $('nav#mobile-menu').mmenu({
 });
 
 // Subscription Script
-// jQuery("#widget-subscribe-form").validate({
-//   submitHandler: function(form) {
-//     jQuery(form).find('.input-group-addon').find('.icon-email2').removeClass('icon-email2').addClass('icon-line-loader icon-spin');
-//     jQuery(form).ajaxSubmit({
-//       target: '#widget-subscribe-form-result',
-//       success: function() {
-//         jQuery(form).find('.input-group-addon').find('.icon-line-loader').removeClass('icon-line-loader icon-spin').addClass('icon-email2');
-//         jQuery('#widget-subscribe-form').find('.form-control').val('');
-//         jQuery('#widget-subscribe-form-result').attr('data-notify-msg', jQuery('#widget-subscribe-form-result').html()).html('');
-//         SEMICOLON.widget.notifications(jQuery('#widget-subscribe-form-result'));
-//       }
-//     });
-//   }
-// });
 $("#quick-contact-form").validate({
   submitHandler: function(form) {
     $(form).animate({ opacity: 0.4 });
@@ -266,9 +252,7 @@ $("#quick-contact-form").validate({
 });
 
 (function($, undefined) {
-
   $.fn.dropdown = function() {
-
     var widget = $(this);
     var label = widget.find('span.valueOfButton');
     var list = widget.children('ul');

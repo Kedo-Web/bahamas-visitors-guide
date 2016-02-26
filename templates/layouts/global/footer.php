@@ -110,6 +110,6 @@
 ?>
 <script type="text/javascript" src="/bvg-admin/addons/assets/js/main.js"></script>
 
-
+<?php perch_content('Analytics'); ?>
 </body>
 </html>
