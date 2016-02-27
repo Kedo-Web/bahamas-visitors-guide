@@ -12,11 +12,12 @@ div#twitter { margin-top: 20px; }
   background: -moz-linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.0)); /* For Firefox 3.6 to 15 */
   background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.0)); /* Standard syntax */
 }
+#header.transparent-header.full-header #header-wrap { border: none; }
 
 #slider.boxed-slider .container { width: 100%; }
 .slider-caption:not(.dark), .slider-caption:not(.dark) h2 { color: #fff; }
 .slider-caption p { font-weight: bold; }
-.one-page-arrow { bottom: 0px; color: #fff; background-color: rgba(0,0,0,0.3); width: 50px; height: 50px; margin-left: -20px; border-top-left-radius: 3px; border-top-left-radius: 3px; }
+.one-page-arrow { bottom: 0px; color: #fff; background-color: rgba(0,0,0,0.3); width: 50px; height: 50px; margin-left: -20px; border-top-right-radius: 3px; border-top-left-radius: 3px; }
 
 .sticky-header #primary-menu.style-2 a#mobile-menu-logo { display: block !important; }
 .sticky-header #primary-menu.style-2 a#mobile-menu-logo img { height: 65px; padding: 10px 0; float: left; }
@@ -54,7 +55,10 @@ table em { font-size: 12px; }
 .portfolio-overlay .portfolio-desc ~ a.right-icon { margin-left: 0 !important; }
 
 body.top-search-open #primary-menu>.container>#mobile-menu-logo { opacity: 0; }
-#top-search form input { font-size: 26px; color: #555; }
+#header.sticky-header:not(.static-sticky) #top-search form input { color: #555; }
+#top-search form input { font-size: 26px; color: #fff; }
+#top-search form input::placeholder { color: #fff; }
+#header.sticky-header:not(.static-sticky) #top-search form input::placeholder { color: #555; }
 #top-search.no-home form input { padding: 12px 80px 0 0; color: #555; height: auto; }
 #page-title .breadcrumb.right { right: 15px !important; margin-top: 10px !important; }
 .menu-title .breadcrumb { margin-top: 0 !important; }
