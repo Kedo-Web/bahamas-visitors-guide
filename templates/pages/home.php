@@ -5,7 +5,7 @@
 ?>
 
 <!-- Header ============================================= -->
-<header id="header" class="transparent-header full-header" data-sticky-class="not-dark">
+<header id="header" class="transparent-header home full-header" data-sticky-class="not-dark">
 	<div id="header-wrap" class="mm-slideout">
 		<div class="container clearfix">
       <a id="mmenu-btn-home" href="#mobile-menu" class="hideDesktop"><i class="fa fa-navicon"></i></a>
