@@ -1,19 +1,11 @@
 <?php
-  perch_layout('global/header', array(
-    'body-class' => 'stretched sticky-responsive-menu',
-    'css-calendar' => true,
-  ));
+perch_layout('global/header', array(
+  'body-class' => 'stretched sticky-responsive-menu',
+));
 ?>
 
 <!-- Header ============================================= -->
-<header id="header" class="sticky-style-2">
-  <div class="container clearfix desktop">
-    <!-- Logo ============================================= -->
-    <?php perch_content('Site Logo'); ?>
-
-    <?php perch_content('Banner Ad'); ?>
-  </div>
-
+<header id="header" class="sticky-style-2 hideDesktop">
   <div id="header-wrap">
     <!-- Primary Navigation ============================================= -->
     <nav id="primary-menu" class="style-2">
@@ -22,11 +14,6 @@
         <a id="mobile-menu-logo" href="/">
           <img src="/bvg-admin/extras/img/template/bvg-logo.png" alt="Bahamas Visitor's Guide Logo">
         </a>
-        <?php perch_pages_navigation(array(
-          'navgroup' =>'top-menu',
-          'levels' => 1
-        )); ?>
-
         <!-- Top Search ============================================= -->
         <div id="top-search" class="no-home">
           <a href="#" id="top-search-trigger">
@@ -42,26 +29,22 @@
   </div>
 </header><!-- #header end -->
 
-<?php perch_content('Page Title'); ?>
-
-<!-- Content ============================================= -->
+<!-- Content
+============================================= -->
 <section id="content">
   <div class="content-wrap">
-    <div class="container clearfix">
+    <div class="container center clearfix">
 
-      <?php
-        perch_events_calendar(array(
-          'calendar-template'  => 'events/calendar/month_view_calendar.html',
-        ));
-      ?>
+      <div id="subscribe">
+        <?php perch_content('Subscribe Form'); ?>
+      </div>
+
+      <a href="/" class="btn btn-default topmargin-sm">&lArr; Back to the Bahamas Visitor's Guide</a>
 
     </div>
   </div>
-
-</section><!-- #content end -->
+</section>
 
 <?php
-  perch_layout('global/footer', array(
-    'calendar' => true,
-  ));
+  perch_layout('simple-footer');
 ?>

@@ -18,7 +18,7 @@
     <nav id="primary-menu" class="style-2">
       <div class="container clearfix">
         <a id="mmenu-btn" href="#mobile-menu" class="hideDesktop"><i class="fa fa-navicon"></i></a>
-        <a id="mobile-menu-logo" href="index.html">
+        <a id="mobile-menu-logo" href="/">
           <img src="/bvg-admin/extras/img/template/bvg-logo.png" alt="Bahamas Visitor's Guide Logo">
         </a>
         <?php perch_pages_navigation(array(
@@ -118,6 +118,7 @@
       <div class="sidebar nobottommargin col_last clearfix">
         <div class="sidebar-widgets-wrap">
           <div class="widget widget_links clearfix">
+            <h4>Things to Know</h4>
             <nav>
               <?php
                 $navgroup = perch_page_attribute('navgroup', [], true);
