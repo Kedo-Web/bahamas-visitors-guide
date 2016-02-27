@@ -5,10 +5,18 @@
 div#instagram { margin-top: 0px; }
 div#twitter { margin-top: 20px; }
 
+#header.transparent-header {
+  background: rgba(0,0,0,0.3); /* For browsers that do not support gradients */
+  background: -webkit-linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.0)); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.0)); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.0)); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.0)); /* Standard syntax */
+}
+
 #slider.boxed-slider .container { width: 100%; }
 .slider-caption:not(.dark), .slider-caption:not(.dark) h2 { color: #fff; }
 .slider-caption p { font-weight: bold; }
-.one-page-arrow { bottom: 0px; color: #fff; background-color: rgba(0,0,0,0.3); width: 50px; height: 50px; margin-left: -20px; }
+.one-page-arrow { bottom: 0px; color: #fff; background-color: rgba(0,0,0,0.3); width: 50px; height: 50px; margin-left: -20px; border-top-left-radius: 3px; border-top-left-radius: 3px; }
 
 .sticky-header #primary-menu.style-2 a#mobile-menu-logo { display: block !important; }
 .sticky-header #primary-menu.style-2 a#mobile-menu-logo img { height: 65px; padding: 10px 0; float: left; }
