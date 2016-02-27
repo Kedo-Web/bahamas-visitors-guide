@@ -6,6 +6,8 @@ div#instagram { margin-top: 0px; }
 div#twitter { margin-top: 20px; }
 
 #slider.boxed-slider .container { width: 100%; }
+.slider-caption:not(.dark), .slider-caption:not(.dark) h2 { color: #fff; }
+.slider-caption p { font-weight: bold; }
 
 .sticky-header #primary-menu.style-2 a#mobile-menu-logo { display: block !important; }
 .sticky-header #primary-menu.style-2 a#mobile-menu-logo img { height: 65px; padding: 10px 0; float: left; }
@@ -23,6 +25,10 @@ table em { font-size: 12px; }
 
 #primary-menu .container #top-search form { height: 80px !important; }
 #primary-menu .pm-logo { display: none; }
+#primary-menu ul li a { color: #fff; }
+#header.sticky-header:not(.static-sticky) #primary-menu > ul > li > a { color: #444; }
+#top-search a { color: #fff; }
+#header.sticky-header:not(.static-sticky) #top-search a { color: #444; }
 
 .widget_links li a:hover { color: #1f938f; }
 .rates-info { text-align: center; font-style: italic; }
