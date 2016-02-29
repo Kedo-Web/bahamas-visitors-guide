@@ -57,8 +57,10 @@ table em { font-size: 12px; }
 body.top-search-open #primary-menu>.container>#mobile-menu-logo { opacity: 0; }
 #header.sticky-header:not(.static-sticky) #top-search form input { color: #555; }
 #top-search form input { font-size: 26px; color: #fff; }
-#top-search form input::placeholder { color: #fff; }
-#header.sticky-header:not(.static-sticky) #top-search form input::placeholder { color: #555; }
+#top-search form input::-webkit-input-placeholder { color: #fff; }
+#top-search form input::-moz-placeholder { color: #fff; }
+#header.sticky-header:not(.static-sticky) #top-search form input::-webkit-input-placeholder { color: #555; }
+#header.sticky-header:not(.static-sticky) #top-search form input::-moz-placeholder { color: #555; }
 #top-search.no-home form input { padding: 12px 80px 0 0; color: #555; height: auto; }
 #page-title .breadcrumb.right { right: 15px !important; margin-top: 10px !important; }
 .menu-title .breadcrumb { margin-top: 0 !important; }
