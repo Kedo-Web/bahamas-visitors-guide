@@ -11,7 +11,7 @@
 				var editdiv = textarea.after('<div id="'+id+'" class="ace_editdiv editor-wrap '+textarea.attr('class')+'"></div>');
 				textarea.hide();
 				var editor = ace.edit(id);
-			    editor.setTheme("ace/theme/textmate");
+			    editor.setTheme("ace/theme/monokai");
 
 			    if (textarea.hasClass('textile')) {
 			    	editor.getSession().setMode("ace/mode/textile");
@@ -25,12 +25,12 @@
 				editor.getSession().on('change', function(){
 					textarea.val(editor.getSession().getValue());
 				});
-			 			
+
 			    editor.getSession().setUseWrapMode(true);
 			    editor.setHighlightActiveLine(false);
 			    editor.setShowPrintMargin(false);
 			    editor.renderer.setShowGutter(false);
-			    
+
 			    Perch.UI.Global.resizeFields();
 				editor.resize();
 
