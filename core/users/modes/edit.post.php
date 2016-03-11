@@ -7,7 +7,7 @@
 <?php include ('_subnav.php'); ?>
 
 
-	   <h1><?php echo PerchLang::get('Editing %s’s User Account', $details['userGivenName'].' '.$details['userFamilyName']); ?></h1>
+	   <h1><?php echo PerchLang::get('Editing %s’s User Account', PerchUtil::html($details['userGivenName'].' '.$details['userFamilyName'])); ?></h1>
 
 
     
@@ -21,7 +21,13 @@
 		
         <div class="field <?php echo $Form->error('userUsername', false);?>">
             <?php echo $Form->label('userUsername', 'Username'); ?>
-            <?php echo $Form->text('userUsername', $Form->get($details, 'userUsername'), ''); ?>
+            <?php echo $Form->text('userUsername', $Form->get($details, 'userUsername'), ''); 
+
+            if (PERCH_PARANOID) {
+            	echo $Form->hint(PerchLang::get('Usernames are case-sensitive'));
+            }
+
+            ?>
         </div>
         
         <div class="field <?php echo $Form->error('userGivenName', false);?>">
@@ -59,6 +65,17 @@
 			<?php echo $Form->label('resetPwd', 'Send new password instructions'); ?>
 			<?php echo $Form->checkbox('resetPwd', '1', '0'); ?>
 		</div>
+
+		<?php
+			if (PERCH_PARANOID) {
+		?>
+		<h2><?php echo PerchLang::get('Authenticate'); ?></h2>
+		<div class="field <?php echo $Form->error('currentPassword', false);?>">
+			<?php echo $Form->label('currentPassword', 'Your password'); ?>
+			<?php echo $Form->password('currentPassword', $Form->get(false, 'currentPassword'), ''); ?>
+		</div>
+
+		<?php } // PARANOID ?>
 
 		<p class="submit">
 			<?php 		
