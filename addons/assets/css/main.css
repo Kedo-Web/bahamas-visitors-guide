@@ -84,6 +84,9 @@ body.top-search-open #primary-menu>.container>#mobile-menu-logo { opacity: 0; }
 .events .entry-image .entry-date { width: 300px; height: 180px; font-size: 90px; position: static; }
 .events .entry-image .entry-date span { font-size: 45px; }
 
+#island-home .entry-date { height: 190px; font-size: 90px; position: static; background-color: rgba(0, 0, 0, 0.7); color: #FFF; text-align: center; margin-bottom: 20px; }
+#island-home .entry-date span { font-size: 55px; display: block; margin-top: -40px; }
+
 /* Subscribe  ==== */
 #subscribe { margin-top: 40px; }
 /* =============== */
