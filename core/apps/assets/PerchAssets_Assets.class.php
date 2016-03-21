@@ -12,8 +12,9 @@ class PerchAssets_Assets extends PerchFactory
     /**
      * Get a paginated list of assets for admin display, filtered by smartbar options
      * @param  boolean $Paging       [description]
-     * @param  array  $filters       [description]
-     * @return object                [description]
+     * @param  string  $filter       [description]
+     * @param  string  $filter_value [description]
+     * @return [type]                [description]
      */
     public function get_filtered_for_admin(PerchPaging $Paging, $filters)
     {
@@ -164,7 +165,7 @@ class PerchAssets_Assets extends PerchFactory
 
     }
 
-    public function search($term, $filters=array())
+    public function search($term, $filters)
     {
         $term = trim($term);
         $tag  = PerchUtil::urlify($term);

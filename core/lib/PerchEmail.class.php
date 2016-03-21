@@ -107,9 +107,9 @@ class PerchEmail
 
     }
 
-    public function body($str=null)
+    public function body($str=false)
     {
-        if ($str === null) {
+        if ($str === false) {
             return $this->body;
         }
 
@@ -117,9 +117,9 @@ class PerchEmail
     }
 
 
-    public function subject($str=null)
+    public function subject($str=false)
     {
-        if ($str === null) {
+        if ($str === false) {
             return $this->subject;
         }
 
@@ -127,63 +127,63 @@ class PerchEmail
         $this->vars['email_subject'] = $str;
     }
 
-    public function senderName($str=null)
+    public function senderName($str=false)
     {
-        if ($str === null) {
+        if ($str === false) {
             return $this->senderName;
         }
 
         $this->senderName = $str;
     }
 
-    public function senderEmail($str=null)
+    public function senderEmail($str=false)
     {
-        if ($str === null) {
+        if ($str === false) {
             return $this->senderEmail;
         }
 
         $this->senderEmail = $str;
     }
 
-    public function recipientEmail($str=null)
+    public function recipientEmail($str=false)
     {
-        if ($str === null) {
+        if ($str === false) {
             return $this->recipientEmail;
         }
 
         $this->recipientEmail = $str;
     }
 
-    public function recipientName($str=null)
+    public function recipientName($str=false)
     {
-        if ($str === null) {
+        if ($str === false) {
             return $this->recipientName;
         }
 
         $this->recipientName = $str;
     }
 
-    public function replyToEmail($str=null)
+    public function replyToEmail($str=false)
     {
-        if ($str === null) {
+        if ($str === false) {
             return $this->replyToEmail;
         }
 
         $this->replyToEmail = $str;
     }
 
-    public function replyToName($str=null)
+    public function replyToName($str=false)
     {
-        if ($str === null) {
+        if ($str === false) {
             return $this->replyToName;
         }
 
         $this->replyToName = $str;
     }
 
-    public function set($key, $str=null)
+    public function set($key, $str=false)
     {
-        if ($str === null) {
+        if ($str === false) {
             return (isset($this->vars[$key]) ? $this->vars[$key] : false);
         }
 

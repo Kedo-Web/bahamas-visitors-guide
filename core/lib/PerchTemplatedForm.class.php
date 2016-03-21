@@ -136,13 +136,12 @@ class PerchTemplatedForm
 	    }
 
 	    $attrs = array();
-        $attrs['id']           = $this->field_prefix.$OpeningTag->id();
-        $attrs['class']        = $OpeningTag->class();
-        $attrs['action']       = $OpeningTag->action();
-        $attrs['method']       = $OpeningTag->method();
-        $attrs['role']         = $OpeningTag->role();
-        $attrs['name']         = $OpeningTag->name();
-        $attrs['autocomplete'] = $OpeningTag->autocomplete();
+	    $attrs['id']     = $this->field_prefix.$OpeningTag->id();
+	    $attrs['class']  = $OpeningTag->class();
+	    $attrs['action'] = $OpeningTag->action();
+	    $attrs['method'] = $OpeningTag->method();
+	    $attrs['role']   = $OpeningTag->role();
+	    $attrs['name']   = $OpeningTag->name();
 
 	    $aria = $OpeningTag->search_attributes_for('aria-');
         if (PerchUtil::count($aria)) {
@@ -454,7 +453,7 @@ class PerchTemplatedForm
             $i = 1;
             foreach($opts as $opt) {
                 $thisID = $groupID.$i;
-                $val    = $opt;
+                $val    = $value;
                 $text   = $opt;
 
                 if (strpos($opt, '|')) {

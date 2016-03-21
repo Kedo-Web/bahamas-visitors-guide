@@ -6,7 +6,7 @@ class PerchXMLTag
 	public $data_attributes = array();
 	private $tag;
 
-	public function __construct($tag)
+	function __construct($tag)
 	{
 		$this->tag	= $tag;
 		$this->parse();
@@ -24,7 +24,7 @@ class PerchXMLTag
 
 		$count	= preg_match_all($pattern, $this->tag, $matches, PREG_SET_ORDER);
 
-		if ($count > 0 && is_array($matches)) {
+		if ($count > 0) {
 			foreach($matches as $match) {
 				if ($match[2]=='false'){
 					$val = false;
@@ -39,12 +39,12 @@ class PerchXMLTag
 		}
 	}
 
-	public function get_attributes()
+	function get_attributes()
 	{
 		return $this->attributes;
 	}
 
-	public function get_data_attribute_string()
+	function get_data_attribute_string()
 	{
 		if (PerchUtil::count($this->data_attributes)) {
 			$out = array();
@@ -56,29 +56,29 @@ class PerchXMLTag
 		return false;
 	}
 
-	public function __get($property) {
+	function __get($property) {
 		if (isset($this->attributes[$property])) {
 			return $this->attributes[$property];
 		}
 		return false;
 	}
 
-	public function __call($method, $arguments=false)
+	function __call($method, $arguments=false)
 	{
 
 		if (isset($this->attributes[$method])) {
 			return $this->attributes[$method];
 		}
 
-		// If attribute is not set, return the first argument as the default value
+		// if not set, return arg[0] as the default value
 		if (isset($arguments[0])) return $arguments[0];
 
 		return false;
 	}
 
-	public function set($key=null, $val=false)
+	public function set($key=false, $val=false)
 	{
-		if ($key===null) {
+		if ($key===false) {
 			// this could be looking for the 'set' attribute, not trying to set an attribute.
 			return $this->__call('set');
 		}
@@ -131,26 +131,24 @@ class PerchXMLTag
             $attstring = '';
         }
 
-        $result = '';
-
         switch($type) {
             case 'opening':
-                $result = '<'.PerchUtil::html($name).$attstring.'>';
+                return '<'.PerchUtil::html($name).$attstring.'>';
                 break;
 
             case 'single':
                 if (defined('PERCH_XHTML_MARKUP') && PERCH_XHTML_MARKUP==false) {
-                    $result = '<'.PerchUtil::html($name).$attstring.'>';
+                    return '<'.PerchUtil::html($name).$attstring.'>';
                 }else{
-                    $result = '<'.PerchUtil::html($name).$attstring.' />';
+                    return '<'.PerchUtil::html($name).$attstring.' />';
                 }
-				break;                
+                break;
 
             case 'closing':
-                $result = '</'.PerchUtil::html($name).'>';
-             	break;
+                return '</'.PerchUtil::html($name).'>';
+                break;
         }
 
-        return $result;
+        return '';
     }
 }

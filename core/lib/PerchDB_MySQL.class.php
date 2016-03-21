@@ -184,13 +184,7 @@ class PerchDB_MySQL
 		if ($result) {
 			$r = $result->fetchAll(PDO::FETCH_ASSOC);
 			$result = null;
-			$count = PerchUtil::count($r);
-			if ($count!==false) {
-				if ($count===0) {
-					PerchUtil::debug_badge('nil');
-				}else{
-					PerchUtil::debug_badge((string)$count);
-				}
+			if (PerchUtil::count($r)) {
 				return $r;
 			}else{
 				return false;
@@ -238,9 +232,7 @@ class PerchDB_MySQL
 		if ($result) {
 			$r = $result->fetchAll(PDO::FETCH_COLUMN, 0);
 			$result = null;
-			$count = PerchUtil::count($r);
-			if ($count!==false) {
-				PerchUtil::debug_badge((string)$count);
+			if (PerchUtil::count($r)) {
 				return $r;
 			}else{
 				return false;
@@ -275,12 +267,9 @@ class PerchDB_MySQL
 			$r = $result->fetch(PDO::FETCH_ASSOC);
 			$result = null;
 
-			$count = PerchUtil::count($r);
-			if ($count!==false) {
-				PerchUtil::debug_badge('1');
+			if (PerchUtil::count($r)) {
 				return $r;
 			}else{
-				PerchUtil::debug_badge('0');
 				return false;
 			}
 
@@ -294,20 +283,17 @@ class PerchDB_MySQL
 		$result = $this->get_row($sql);
 
 		if (is_array($result)) {
-			PerchUtil::debug_badge('1');
 			foreach($result as $val) {
 				return $val;
 			}
 		}
 
-		PerchUtil::debug_badge('0');
 		return false;
 	}
 
 	public function get_count($sql)
 	{
 	    $result = $this->get_value($sql);
-	    PerchUtil::debug_badge((string)$result);
 	    return intval($result);
 	}
 

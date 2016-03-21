@@ -10,14 +10,14 @@ class PerchFieldType
     /**
      * The form object the field is used with
      *
-     * @var object
+     * @var string
      */
     protected $Form = false;
 
     /**
      * The tag object for the field
      *
-     * @var object
+     * @var string
      */
     protected $Tag = false;
 
@@ -41,7 +41,7 @@ class PerchFieldType
     /**
      * The un-processed item
      *
-     * @var array
+     * @var string
      */
     protected $raw_item = false;
 
@@ -49,7 +49,7 @@ class PerchFieldType
     /**
      * All the tags from the template
      *
-     * @var array
+     * @var string
      */
     protected $sibling_tags = false;
 
@@ -57,7 +57,7 @@ class PerchFieldType
 	/**
 	 * Is the processed output from this field pre-encoded markup? Use by template for safe encoding.
 	 *
-	 * @var bool
+	 * @var string
 	 */
 	public $processed_output_is_markup = false;
 
@@ -68,7 +68,7 @@ class PerchFieldType
     public $app_id = false;
 
 
-    public function __construct(PerchForm $Form=null, PerchXMLTag $Tag=null, $app_id)
+    public function __construct($Form, $Tag, $app_id)
     {
         $this->Form   = $Form;
         $this->Tag    = $Tag;
@@ -251,11 +251,11 @@ class PerchFieldType
     /**
      * Set sibling tags
      *
-     * @param array $tags
+     * @param string $tags
      * @return void
      * @author Drew McLellan
      */
-    public function set_sibling_tags($tags=array())
+    public function set_sibling_tags($tags)
     {
         $this->sibling_tags = $tags;
     }
@@ -264,7 +264,7 @@ class PerchFieldType
     /**
      * Get sibling tags from the template, if set.
      *
-     * @return array
+     * @return void
      * @author Drew McLellan
      */
     public function get_sibling_tags()

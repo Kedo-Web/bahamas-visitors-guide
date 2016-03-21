@@ -25,7 +25,6 @@
     $req['userGivenName']  = "Required";
     $req['userFamilyName'] = "Required";
     $req['userEmail']      = "Required";
-    $req['currentPassword'] = "Required";
     
     if ($User->id() != $CurrentUser->id()){
         $req['roleID']       = "Required";
@@ -37,11 +36,6 @@
     $validation = array();
     $validation['userUsername']	= array("username", PerchLang::get("Username not available, try another."), array('userID'=>$User->id()));
     $validation['userEmail']	= array("email", PerchLang::get("Email incomplete or already in use."), array('userID'=>$User->id()));
-
-    if (PERCH_PARANOID) {
-        $CUser = $Users->find($CurrentUser->id());
-        $validation['currentPassword'] = array("admin_auth", PerchLang::get("Please provide your password to authenticate this change."), array('user'=>&$CUser));
-    }
 
     $Form->set_validation($validation);
 

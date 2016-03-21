@@ -5,8 +5,7 @@ class PerchAssets_Asset extends PerchBase
     protected $table  = 'resources';
     protected $pk     = 'resourceID';
 
-    private $Bucket   = null;
-
+    private $Bucket = false;
     private static $image_types  = array('jpg', 'png', 'gif', 'svg', 'jpeg', 'webp');
     private static $doc_types    = array('doc', 'docx', 'pdf', 'odt', 'fodt', 'epub', 'mobi', 'docm', 'rtf', 'txt', 'uof', 'wpd', 'wri');
     private static $sheet_types  = array('xls', 'csv', 'ods', 'fods', 'xlsx');
@@ -24,6 +23,7 @@ class PerchAssets_Asset extends PerchBase
             'video' => array('label'=>PerchLang::get('Video'), 'exts'=>self::$video_types),
             'pres'  => array('label'=>PerchLang::get('Presentations'), 'exts'=>self::$pres_types),
             );
+
     }
 
     public function thumb_url()
@@ -63,6 +63,8 @@ class PerchAssets_Asset extends PerchBase
         if (!isset($this->details['thumbWidth']) || !isset($this->details['thumbDensity'])) return false;
 
         return $this->thumbWidth();
+
+        return floor($this->thumbWidth() / $this->thumbDensity());
     }
 
     public function thumb_display_height()
@@ -72,6 +74,8 @@ class PerchAssets_Asset extends PerchBase
         if (!isset($this->details['thumbHeight']) || !isset($this->details['thumbDensity'])) return false;
 
         return $this->thumbHeight();
+
+        return floor($this->thumbHeight() / $this->thumbDensity());
     }
 
     public function get_type()
@@ -107,6 +111,8 @@ class PerchAssets_Asset extends PerchBase
         return strtolower($this->resourceType())=='svg';
     }
 
+
+
     public function reindex()
     {
         if ($this->exists()) {
@@ -128,12 +134,14 @@ class PerchAssets_Asset extends PerchBase
             if (count($data)) {
                 $this->update($data);
             }
+        }else{
+            //$this->mark_as_awol();
         }
     }
 
     /**
      * Flag this resource as having a missing file 
-     * @return bool
+     * @return [type] [description]
      */
     public function mark_as_awol()
     {
@@ -151,15 +159,13 @@ class PerchAssets_Asset extends PerchBase
         // children
         $Assets = new PerchAssets_Assets($this->api);
         $Assets->mark_children_as_library($this->id());
-
-        return true;
     }
 
     /**
      * Does the file exist on the file system?
      * Initially just proxies file_exists() but will get more complex with CDN support
      * 
-     * @return bool [description]
+     * @return [type] [description]
      */
     protected function exists() 
     {
@@ -171,7 +177,7 @@ class PerchAssets_Asset extends PerchBase
 
     /**
      * Get the file system path for the file
-     * @return string [description]
+     * @return [type] [description]
      */
     public function file_path()
     {
@@ -181,7 +187,7 @@ class PerchAssets_Asset extends PerchBase
 
     /**
      * Get the web path for the file
-     * @return string [description]
+     * @return [type] [description]
      */
     public function web_path()
     {
@@ -191,7 +197,7 @@ class PerchAssets_Asset extends PerchBase
 
     /**
      * Get the (cached) resource bucket details
-     * @return PerchResourceBucket|null [description]
+     * @return [type] [description]
      */
     public function get_bucket()
     {
@@ -204,7 +210,7 @@ class PerchAssets_Asset extends PerchBase
 
     /**
      * Attempt to construct a nice(ish) looking title from the file name
-     * @return string [description]
+     * @return [type] [description]
      */
     public function get_title_from_filename()
     {
@@ -215,7 +221,7 @@ class PerchAssets_Asset extends PerchBase
 
     /**
      * Get the file size, and other meta like dimensions for images
-     * @return array [description]
+     * @return [type] [description]
      */
     public function get_meta()
     {
@@ -234,7 +240,7 @@ class PerchAssets_Asset extends PerchBase
 
             if ($this->resourceType()=='svg') {
                 $info = $Image->get_svg_size($file_path);
-            } else {
+            }else{
                 PerchUtil::debug('Get image size: '. $file_path);
                 $info = getimagesize($file_path);
             }
@@ -246,7 +252,7 @@ class PerchAssets_Asset extends PerchBase
 
             if ($info && isset($info['mime'])) {
                $out['resourceMimeType'] = $info['mime'];
-            } else {
+            }else{
                $out['resourceMimeType'] = PerchUtil::get_mime_type($this->file_path());
             }
 
@@ -274,7 +280,7 @@ class PerchAssets_Asset extends PerchBase
                     $out['resourceCrop'] = '1';
                 }
             }
-        } else {
+        }else{
             $out['resourceMimeType'] = PerchUtil::get_mime_type($this->file_path());
         }
 
@@ -295,7 +301,7 @@ class PerchAssets_Asset extends PerchBase
 
     /**
      * A sanitised version of to_array for the JSON api
-     * @return array [description]
+     * @return [type] [description]
      */
     public function to_api_array()
     {
@@ -339,7 +345,7 @@ class PerchAssets_Asset extends PerchBase
 
         if ($size < 1048576) {
             $size = round($size/1024, 0).'KB';
-        } else {
+        }else{
             $size = round($size/1024/1024, 0).'MB';
         }
 
@@ -350,6 +356,9 @@ class PerchAssets_Asset extends PerchBase
     {
         return ucfirst($this->get_type() .' / '.strtoupper($this->resourceType()));
     }
+
+    
+
 
     public function get_fieldtype_profile()
     {
@@ -372,6 +381,7 @@ class PerchAssets_Asset extends PerchBase
         }
 
         return $out;
+
     }
 
     public function in_use() 
@@ -381,4 +391,6 @@ class PerchAssets_Asset extends PerchBase
 
         return ($count > 0);
     }
+
+
 }

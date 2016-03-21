@@ -66,8 +66,6 @@ class PerchTemplate
 		$r     = array();
 		$count = PerchUtil::count($content_vars);
 
-		PerchUtil::debug_badge($count);
-
 		if ($count){
 
 			if ($limit===false) {
@@ -144,17 +142,10 @@ class PerchTemplate
         	$content_vars = array();
         }
 
-        if ($index_in_group===false && !count($content_vars)) {
-			PerchUtil::debug_badge('0');
-		}
-
 		$template	= str_replace(PERCH_PATH, '', $this->template);
 		$path		= $this->file;
 
 		$contents	= $this->load();
-
-		// API HANDLERS
-		$contents 	= $this->render_template_handlers($content_vars, $contents);
 
 		// BLOCKS
 		$contents   = $this->parse_blocks($contents, $content_vars);
@@ -172,7 +163,7 @@ class PerchTemplate
 		$contents 	= $this->parse_categories($contents, $content_vars);
 
 		// FORMS
-		if ($template) $contents = str_replace('<perch:form ', '<perch:form template="'.$template.'" ', $contents);
+		$contents 	= str_replace('<perch:form ', '<perch:form template="'.$template.'" ', $contents);
 
 		// BEFORE
 		$contents 	= $this->parse_paired_tags('before', true,  $contents, $content_vars, $index_in_group, 'parse_conditional');
@@ -203,20 +194,6 @@ class PerchTemplate
 
 		// UNMATCHED TAGS
 		$contents 	= $this->remove_unmatched_tags($contents);
-
-    	return $contents;
-	}
-
-	public function render_template_handlers($content_vars, $contents)
-	{
-		$handlers = PerchSystem::get_registered_template_handlers();
-
-    	if (PerchUtil::count($handlers)) {
-    		foreach($handlers as $handlerClass) {
-				$Handler  = new $handlerClass;
-				$contents = $Handler->render($content_vars, $contents, $this);
-    		}
-    	}
 
     	return $contents;
 	}
@@ -494,7 +471,7 @@ class PerchTemplate
 		    return $final;
 		}
 
-		return null;
+		return false;
 	}
 
 	public function find_all_tags_and_repeaters($type='content', $contents=false)
