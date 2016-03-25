@@ -10,11 +10,17 @@
       <h2><a href="<perch:events id="eventLink" />"><perch:events id="eventTitle" /></a></h2>
     </div>
     <ul class="entry-meta clearfix">
+
       <perch:if id="eventInvite" value="Public">
       <li><span class="label label-info"><perch:events id="eventInvite" /></span></li>
       <perch:else />
       <li><span class="label label-warning"><perch:events id="eventInvite" /></span></li>
       </perch:if>
+
+      <perch:if id="eventDateTime" match="neq" value="00:00:00" format="H:i:s">
+        <li><i class="fa fa-clock-o"></i> <perch:events id="eventDateTime" format="g:ia" /></li>
+      </perch:if>
+
       <li><i class="fa fa-clock-o"></i> <perch:events id="eventDateTime" format="g a" /></li>
       <li><i class="fa fa-map-marker"></i> <perch:events id="eventLocation" /></li>
     </ul>

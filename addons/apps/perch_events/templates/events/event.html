@@ -10,6 +10,7 @@
 
     <p><perch:events id="eventInvite" type="select" label="Invitation" options="Public, Private" /></p>
     <p><perch:events id="eventLocation" type="text" label="Location" required="true" /></p>
+    <p style="display:none;"><perch:events id="contact" label="Contact Information" type="textarea" textile="true" editor="markitup" encode="false" size="s" /></p>
 
     <perch:if exists="image">
         <img src="<perch:events id="image" type="image" label="Image" width="640" crop="true" />" alt="<perch:events id="eventTitle" />" />

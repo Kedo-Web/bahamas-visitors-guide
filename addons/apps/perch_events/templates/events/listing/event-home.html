@@ -17,7 +17,15 @@
           <img src="<perch:events id="image" type="image" label="Image" width="400" height="250" />" alt="<perch:events id="eventTitle" />">
         </div> -->
         <div class="fbox-desc">
-          <h3><perch:events id="eventTitle" /><span class="subtitle"><perch:events id="eventDateTime" format="D, j F Y g:ia" /></span></h3>
+          <h3>
+            <perch:events id="eventTitle" />
+            <span class="subtitle">
+              <perch:events id="eventDateTime" format="D, j F Y" />
+              <perch:if id="eventDateTime" match="neq" value="00:00:00" format="H:i:s">
+                <perch:events id="eventDateTime" format="g:ia" />
+              </perch:if>
+            </span>
+          </h3>
           <p><perch:events id="eventDescHTML" type="textarea" textile="true" editor="markitup" encode="false" /></p>
         </div>
       </div>
