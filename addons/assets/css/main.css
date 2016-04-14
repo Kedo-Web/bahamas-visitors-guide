@@ -100,7 +100,9 @@ body.top-search-open #primary-menu>.container>#mobile-menu-logo { opacity: 0; }
   .hideDesktop, #mobile-nav { display: block; }
   .hideMobile { display: none; }
   #top-search.no-home i { padding: 10px 0 10px 10px; }
+  .home #top-search a { color: #000; }
   #top-search a i { padding-left: 10px; }
+  #top-search form input { color: #000; }
   #primary-menu ul { display: none; }
   #primary-menu .pm-logo { display: block; }
   .top-search-open #mmenu-btn-home, .top-search-open #mmenu-btn { display: none; }
@@ -140,4 +142,6 @@ body.top-search-open #primary-menu>.container>#mobile-menu-logo { opacity: 0; }
   #header.transparent-header { background: none; }
   .one-page-arrow:hover { color: #fff; }
   .one-page-arrow .fadeInDown { -webkit-animation-name: none; animation-name: none; }
+  .home #top-search a { color: #000; }
+  #top-search form input { color: #000; }
 }
