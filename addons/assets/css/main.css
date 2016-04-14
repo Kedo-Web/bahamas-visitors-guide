@@ -53,6 +53,7 @@ table em { font-size: 12px; }
 
 .portfolio-item .portfolio-image img { width: 250px; }
 .portfolio-overlay .portfolio-desc ~ a.right-icon { margin-left: 0 !important; }
+.portfolio-full .portfolio-desc { border-left: 1px solid #eee; border-bottom: 1px solid #eee; }
 
 body.top-search-open #primary-menu>.container>#mobile-menu-logo { opacity: 0; }
 #header.sticky-header:not(.static-sticky) #top-search form input { color: #555; }
