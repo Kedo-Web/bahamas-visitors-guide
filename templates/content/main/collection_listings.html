@@ -1,7 +1,7 @@
-<div class="ipost clearfix bottommargin-sm">
+<div class="ipost clearfix bottommargin-sm" name="">
   <div class="col_half nobottommargin">
     <div class="entry-image">
-      <a href="<perch:content id="link" type="text" label="Link"/>" target="_blank">
+      <a href="<perch:content id="link" type="text" label="Link"/>" target="_blank" name="<perch:content id="anchor-slug" type="slug" label="Anchor Slug" for="listing-title" editable="true" indelible="true" />">
         <img class="image_fade" src="<perch:content id="image" type="image" label="Image" required="true" />" alt="<perch:content id="listing-title" type="text" label="Listing Title" title="true" required="true" />">
       </a>
     </div>
@@ -26,6 +26,20 @@
     <div class="entry-content">
       <p><perch:content id="description" type="textarea" label="Description" size="xs" /></p>
     </div>
+
+    <p style="display:none;"><perch:content id="choice" type="select" label="Corresponding Listings" options="No, Yes" /></p>
+    <perch:if id="choice" value="Yes">
+    <ul class="entry-extra clearfix">
+      <li>Associate Listings:</li>
+      <perch:repeater id="co-listings" label="Co-Lisings">
+        <li>
+          <a href="<perch:content id="co-listing-link" type="text" label="Link" />" title="<perch:content id="co-listing-descip" type="text" label="Description" />">
+            <i class="fa fa-<perch:content id="co-listing-icon" type="select" label="Icon" options="Accommodations|bed, Marinas|ship, Activities|ticket, Restaurants|cutlery, Shopping|shopping-cart" />"></i>
+          </a>
+        </li>
+      </perch:repeater>
+    </ul>
+    </perch:if>
 
     <perch:related id="islands" collection="Islands" label="Island" required="true">
       <p style="display:none;"><perch:content id="name" /></p>

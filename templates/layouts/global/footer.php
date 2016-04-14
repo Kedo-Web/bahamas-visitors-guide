@@ -29,29 +29,26 @@
               <input type="text" class="required form-control email input-block-level" id="quick-contact-form-email" name="quick-contact-form-email" value="" placeholder="Email Address" />
             </div>
 
-            <div class="input-group btn-group divcenter dropup">
-              <button class="btn btn-default form-control required dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                <span class="valueOfButton">Choose An Island</span>
-                <span class="caret"></span>
-              </button>
-              <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                <li>Abaco</li>
-                <li>Acklins</li>
-                <li>Andros</li>
-                <li>Berry Islands</li>
-                <li>Bimini</li>
-                <li>Cat Island</li>
-                <li>Crooked Island</li>
-                <li>Eleuthera</li>
-                <li>Exuma</li>
-                <li>Grand Bahama</li>
-                <li>Inagua</li>
-                <li>Long Island</li>
-                <li>Mayaguana</li>
-                <li>New Providence</li>
-                <li>Rum Cay</li>
-                <li>San Salvador</li>
-              </ul>
+            <div class="input-group divcenter">
+              <select>
+                <option value="">Choose An Island</option>
+                <option value="abaco">Abaco</option>
+                <option value="acklins">Acklins</option>
+                <option value="andros">Andros</option>
+                <option value="berry-island">Berry Islands</option>
+                <option value="bimini">Bimini</option>
+                <option value="cat-island">Cat Island</option>
+                <option value="crooked-island">Crooked Island</option>
+                <option value="eleuthera">Eleuthera</option>
+                <option value="exuma">Exuma</option>
+                <option value="grand-bahama">Grand Bahama</option>
+                <option value="inagua">Inagua</option>
+                <option value="long-island">Long Island</option>
+                <option value="mayaguana">Mayaguana</option>
+                <option value="new-providence">New Providence</option>
+                <option value="rum-cay">Rum Cay</option>
+                <option value="san-salvador">San Salvador</option>
+              </select>
             </div>
 
             <!-- <textarea class="required form-control input-block-level short-textarea" id="quick-contact-form-message" name="quick-contact-form-message" rows="4" cols="30" placeholder="Message"></textarea> -->

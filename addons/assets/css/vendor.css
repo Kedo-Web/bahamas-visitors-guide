@@ -16760,7 +16760,8 @@ blockquote.pull-right {
 
 .top-advert a,
 .top-advert img {
-  display: block; }
+  display: block;
+  height: 90px; }
 
 .bnews-title {
   display: block;
