@@ -37,7 +37,7 @@
 </header><!-- #header end -->
 
 <!-- Slider Hero ============================================= -->
-<section id="slider" class="swiper_wrapper full-screen clearfix">
+<section id="slider" class="swiper_wrapper full-screen clearfix force-full-screen">
 
   <div class="swiper-container swiper-parent">
     <div class="swiper-wrapper">

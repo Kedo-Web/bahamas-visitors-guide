@@ -27425,9 +27425,9 @@ img.mfp-img {
   h4 {
     font-size: 16px; }
 
-  #gotoTop,
+  /*#gotoTop,
   .one-page-arrow {
-    display: none !important; }
+    display: none !important; }*/
 
   #top-bar {
     height: auto; }

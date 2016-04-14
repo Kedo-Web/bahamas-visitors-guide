@@ -121,6 +121,8 @@ body.top-search-open #primary-menu>.container>#mobile-menu-logo { opacity: 0; }
   #header .container.desktop { display: none; }
   #header.transparent-header { background: none; }
   .input-group select { width: 220px; }
+  .one-page-arrow:hover { color: #fff; }
+  .one-page-arrow .fadeInDown { -webkit-animation-name: none; animation-name: none; }
 }
 /* =================================================
     Mobile Phone
@@ -137,4 +139,6 @@ body.top-search-open #primary-menu>.container>#mobile-menu-logo { opacity: 0; }
   .deviceWidth { width: 100%; }
   #header.transparent-header { background: none; }
   .input-group select { width: 280px; }
+  .one-page-arrow:hover { color: #fff; }
+  .one-page-arrow .fadeInDown { -webkit-animation-name: none; animation-name: none; }
 }
