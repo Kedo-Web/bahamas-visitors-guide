@@ -200,7 +200,7 @@ jQuery("#template-jobform").validate({
 /* ==============================================================
     General Scripts (Headers & Footers)
 ============================================================== */
-// Mobile Offcanvas Menu
+// Mobile Offcanvas Full Menu
 $('nav#mobile-menu').mmenu({
   "extensions": [
     "border-full"
@@ -228,6 +228,30 @@ $('nav#mobile-menu').mmenu({
         "<a class='fa fa-twitter' href='#/'></a>",
         "<a class='fa fa-google-plus' href='#/'></a>",
         "<a class='fa fa-instagram' href='#/'></a>"
+      ]
+    }
+  ]
+});
+
+// Mobile Offcanvas Side Menu
+$('nav#side-menu').mmenu({
+  "extensions": [
+    "border-full"
+  ],
+  "navbar": {
+    "title": "Island Menu"
+  },
+  "autoHeight": true,
+  "offCanvas": {
+    "position": "bottom"
+  },
+  "navbars": [
+    {
+      "position": "top",
+      "content": [
+        "prev",
+        "title",
+        "close"
       ]
     }
   ]

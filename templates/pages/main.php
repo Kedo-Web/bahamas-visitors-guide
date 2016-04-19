@@ -74,6 +74,7 @@
       <div class="postcontent nobottommargin clearfix">
         <div class="hideDesktop">
           <?php perch_pages_breadcrumbs(); ?>
+          <a id="mmenu-btn2" href="#side-menu" class="hideDesktop"><span>More</span> <i class="fa fa-info-circle"></i></a>
         </div>
         <h2><?php perch_content('Page Title'); ?></h2>
         <?php perch_content('Content Area 1'); ?>
@@ -118,8 +119,9 @@
       <div class="sidebar nobottommargin col_last clearfix">
         <div class="sidebar-widgets-wrap">
           <div class="widget widget_links clearfix">
-            <h4>Things to Know</h4>
-            <nav>
+
+            <h4 class="hideMobile">Things to Know</h4>
+            <nav class="hideMobile">
               <?php
                 $navgroup = perch_page_attribute('navgroup', [], true);
                 if($navgroup) {
@@ -130,6 +132,13 @@
                 }
               ?>
             </nav>
+            <nav id="side-menu" class="hideDesktop">
+              <?php perch_pages_navigation(array(
+                'navgroup' => $navgroup,
+                'flat' => false
+              )); ?>
+            </nav>
+
             <?php perch_content('Sidebar Area 1'); ?>
             <?php perch_content('Sidebar Area 2'); ?>
             <?php perch_content('Sidebar Area 3'); ?>

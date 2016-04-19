@@ -91,6 +91,8 @@ body.top-search-open #primary-menu>.container>#mobile-menu-logo { opacity: 0; }
 #subscribe-btn a:hover { background-color: #449d44; border-color: #398439; }
 /* =============== */
 
+.btn.readmore { float: right; margin-top: 10px; }
+
 /* =================================================
     Full Size Tablet
 ================================================= */
@@ -100,6 +102,8 @@ body.top-search-open #primary-menu>.container>#mobile-menu-logo { opacity: 0; }
   .hideDesktop, #mobile-nav { display: block; }
   .hideMobile { display: none; }
   #top-search.no-home i { padding: 10px 0 10px 10px; }
+  #top-search.no-home form input { padding-top: 20px; }
+  .responsive-sticky-header #top-search.no-home form input { padding-top: 12px; }
   .home #top-search a { color: #000; }
   #top-search a i { padding-left: 10px; }
   #top-search form input { color: #000; }
@@ -115,6 +119,7 @@ body.top-search-open #primary-menu>.container>#mobile-menu-logo { opacity: 0; }
   .responsive-sticky-header #mobile-menu-logo { width: 145px; }
   .responsive-sticky-header #mobile-menu-logo img { height: 60px; }
   nav#mobile-menu a { font-size: 20px; }
+  #mmenu-btn2 { float: right; margin-top: -45px; font-size: 12px; background: #1f938f; color: white; padding: 5px 8px; border-radius: 5px; }
   .mm-listview { line-height: 25px; }
   #mobile-menu-logo { display: block; margin-left: auto; margin-right: auto; width: 265px; }
   #mobile-menu-logo img { padding: 10px; height: 100px; }

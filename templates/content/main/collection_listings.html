@@ -20,11 +20,18 @@
         <li><i class="fa fa-phone"></i> <perch:content id="phone" type="text" label="Phone Number"/></li>
       </perch:repeater>
     </ul>
-    <ul class="entry-meta clearfix">
-      <li><i class="fa fa-envelope-o"></i><a href="mailto:<perch:content id="email" type="text" label="E-mail"/>"> <perch:content id="email" type="text" label="E-mail"/></a></li>
-    </ul>
+
+    <perch:if exists="email">
+      <ul class="entry-meta clearfix">
+        <li><i class="fa fa-envelope-o"></i><a href="mailto:<perch:content id="email" type="text" label="E-mail"/>"> <perch:content id="email" type="text" label="E-mail"/></a></li>
+      </ul>
+    </perch:if>
+
     <div class="entry-content">
       <p><perch:content id="description" type="textarea" label="Description" size="xs" /></p>
+      <perch:if exists="link">
+      <a href="<perch:content id="link" type="text" label="Link"/>" class="btn btn-danger readmore">Read More</a>
+      </perch:if>
     </div>
 
     <p style="display:none;"><perch:content id="choice" type="select" label="Corresponding Listings" options="No, Yes" /></p>
