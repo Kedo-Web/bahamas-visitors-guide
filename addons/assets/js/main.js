@@ -137,7 +137,7 @@ jQuery(window).load(function(){
 });
 
 // Recent News & Updates Script
-jQuery(document).ready(function($) {
+jQuery(window).load(function(){
   var ocImages2 = $("#oc-images2");
   ocImages2.owlCarousel({
     responsive:{
@@ -159,7 +159,7 @@ jQuery(document).ready(function($) {
     Island Pages
 ============================================================== */
 // Small Photo Gallery Carousel Script
-jQuery(document).ready(function($) {
+jQuery(window).load(function(){
   var ocImages = $("#oc-images");
   ocImages.owlCarousel({
     margin: 20,
