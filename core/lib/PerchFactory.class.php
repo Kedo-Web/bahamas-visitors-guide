@@ -39,7 +39,7 @@ class PerchFactory
 
     public function find($id)
     {
-        $sql    = 'SELECT * FROM ' . $this->table . ' WHERE ' . $this->pk . '='. $this->db->pdb($id) .' LIMIT 1';
+        $sql    = 'SELECT * FROM ' . $this->table . ' WHERE ' . $this->pk . '='. $this->db->pdb($id) .$this->standard_restrictions().' LIMIT 1';
         $result = $this->db->get_row($sql);
 
         if (is_array($result)) {
@@ -59,6 +59,12 @@ class PerchFactory
 
         $sql .= ' *
                 FROM ' . $this->table;
+
+        $restrictions = $this->standard_restrictions();
+
+        if ($restrictions!='') {
+            $sql .= ' WHERE 1=1 '.$restrictions;
+        }
 
         if (isset($this->default_sort_column)) {
             $sql .= ' ORDER BY ' . $this->default_sort_column . ' '.$this->default_sort_direction;
@@ -705,7 +711,7 @@ class PerchFactory
     public function get_filtered_listing_from_index($opts, $where_callback, $pre_template_callback=null)
     {
         $Perch = Perch::fetch();
-
+        
         $index_table = PERCH_DB_PREFIX.$this->index_table;
 
         $where = array();
@@ -769,7 +775,7 @@ class PerchFactory
                         }else{
                             $pos[] = $cat;
                         }
-                    }
+                    }                   
 
                     $sql .= $this->_get_filter_sub_sql('_category', $pos, false, $match, true, $where_clause);
                     $sql .= $this->_get_filter_sub_sql('_category', $neg, true, $match, true, $where_clause);
@@ -984,7 +990,7 @@ class PerchFactory
             if (PerchUtil::count($where)) $sql .= ' AND ('.implode($where, ' OR ').') ';
 
             $sql .= ' AND idx.itemID=idx2.itemID AND idx.itemKey=idx2.itemKey
-                        GROUP BY idx.itemID, idx2.indexValue
+                        GROUP BY idx.itemID, idx2.indexValue, '.$this->pk.'
                     ) as tbl '; // DM added ', idx2.indexValue' for MySQL 5.7 compat
 
             $where = array();
@@ -1270,7 +1276,7 @@ class PerchFactory
                 }
 
             }
-            $cat_sql .= implode(' OR ', $where);
+            $cat_sql .= '(' . implode(' OR ', $where). ')';
 
             if ($match=='all') {
                 $cat_sql .= ' GROUP BY idx.itemID HAVING COUNT(idx.itemID)='.count($items).' ';

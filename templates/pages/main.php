@@ -77,6 +77,9 @@
           <a id="mmenu-btn2" href="#side-menu" class="hideDesktop"><span>More</span> <i class="fa fa-info-circle"></i></a>
         </div>
         <h2><?php perch_content('Page Title'); ?></h2>
+        <?php perch_content('Featured Area 1'); ?>
+        <?php perch_content('Featured Area 2'); ?>
+        <?php perch_content('Featured Area 3'); ?>
         <?php perch_content('Content Area 1'); ?>
         <?php
           $collection = perch_page_attribute('collection', [], true);
@@ -94,7 +97,7 @@
               'paginate' => true,
               'filter' => 'islands.name',
               'match' => 'eq',
-              'value' => 'Acklins',
+              'value' => $collection,
               'category' => 'industry/'.$category,
             ));
           }
@@ -120,7 +123,7 @@
         <div class="sidebar-widgets-wrap">
           <div class="widget widget_links clearfix">
 
-            <h4 class="hideMobile">Things to Know</h4>
+            <h4 class="hideMobile">More Information</h4>
             <nav class="hideMobile">
               <?php
                 $navgroup = perch_page_attribute('navgroup', [], true);

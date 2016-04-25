@@ -55,6 +55,13 @@
         KEY `idx_user` (`userID`)
       ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
+      ALTER TABLE `__PREFIX__users` ADD `userLastFailedLogin` DATETIME  NULL  AFTER `userPasswordTokenExpires`;
+
+      ALTER TABLE `__PREFIX__users` ADD `userFailedLoginAttempts` INT(0)  UNSIGNED  NOT NULL  DEFAULT '0'  AFTER `userLastFailedLogin`;
+
+
+      ALTER TABLE `__PREFIX__resources` ADD INDEX `idx_list` (`resourceParentID`, `resourceKey`, `resourceAWOL`);
+
 
     ";
 

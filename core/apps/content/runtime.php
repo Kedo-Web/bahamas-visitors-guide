@@ -15,10 +15,11 @@
         perch_content_check_preview();
     }
 
-    function perch_content($key=false, $return=false)
+    function perch_content($key=null, $return=false)
     {
-        if ($key === false) {
+        if ($key === null) {
             echo 'You must pass in a <em>name</em> for the content. e.g. <code style="color: navy;background: white;">&lt;' . '?php perch_content(\'Phone number\'); ?' . '&gt;</code>';
+            return ' ';
         }
 
         $Content = PerchContent::fetch();
@@ -35,9 +36,9 @@
         PerchUtil::flush_output();
     }
 
-    function perch_content_custom($key=false, $opts=false, $return=false)
+    function perch_content_custom($key=null, $opts=array(), $return=false)
     {
-        if ($key === false) return ' ';
+        if ($key === null) return ' ';
 
         if (isset($opts['skip-template']) && $opts['skip-template']==true) {
             $return  = true;
@@ -123,9 +124,11 @@
         }
     }
 
-    function perch_content_search($key=false, $opts=false, $return=false)
+    function perch_content_search($key=null, $opts=array(), $return=false)
     {
-        $key = trim(stripslashes($key));
+        if ($key!==null) {
+            $key = trim(stripslashes($key));
+        }
 
         $Content = PerchContent::fetch();
 
@@ -141,7 +144,7 @@
         $defaults['skip-template']        = false;
         $defaults['apps']               = array();
 
-        if (is_array($opts)) {
+        if (count($opts)) {
             $opts = array_merge($defaults, $opts);
         }else{
             $opts = $defaults;
@@ -166,14 +169,14 @@
         PerchUtil::flush_output();
     }
 
-    function perch_search_form($opts=false, $return=false)
+    function perch_search_form($opts=array(), $return=false)
     {
         $Perch = Perch::fetch();
 
         $defaults = array();
         $defaults['template'] = 'search-form.html';
 
-        if (is_array($opts)) {
+        if (count($opts)) {
             $opts = array_merge($defaults, $opts);
         }else{
             $opts = $defaults;

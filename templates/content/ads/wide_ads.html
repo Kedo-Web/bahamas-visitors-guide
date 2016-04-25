@@ -1,3 +1,6 @@
 <div class="bottommargin-lg topmargin-lg">
-  <img src="<perch:content id="image" type="image" label="Ad Image" required="true" />" alt="<perch:content id="name" type="text" label="Ad Name" />" class="aligncenter notopmargin nobottommargin">
+  <a href="<perch:content id="link" type="text" label="Ad Link" />">
+    <img src="<perch:content id="image" type="image" label="Desktop Ad" required="true" />" alt="<perch:content id="name" type="text" label="Ad Name" />" class="aligncenter notopmargin nobottommargin hideMobile">
+    <img src="<perch:content id="image-m" type="image" label="Mobile Ad" required="true" />" alt="<perch:content id="name" type="text" label="Ad Name" />" class="aligncenter notopmargin nobottommargin hideDesktop">
+  </a>
 </div>

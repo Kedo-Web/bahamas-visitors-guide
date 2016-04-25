@@ -27,9 +27,21 @@ class PerchAdmin extends Perch
         return self::$instance;
 	}
 
+    public function __construct() 
+    {
+        parent::__construct();
+
+        if (!defined('PERCH_STRONG_PASSWORDS'))      define('PERCH_STRONG_PASSWORDS', PERCH_PARANOID);
+        if (!defined('PERCH_PASSWORD_MIN_LENGTH'))   define('PERCH_PASSWORD_MIN_LENGTH', 6);
+        if (!defined('PERCH_MAX_FAILED_LOGINS'))     define('PERCH_MAX_FAILED_LOGINS', 10);
+        if (!defined('PERCH_AUTH_LOCKOUT_DURATION')) define('PERCH_AUTH_LOCKOUT_DURATION', '1 HOUR');
+        if (!defined('PERCH_VERIFY_UPLOADS'))        define('PERCH_VERIFY_UPLOADS', PERCH_PARANOID);
+        
+    }
+
     public function get_apps($for_nav=false)
     {
-        if ($for_nav==false) return $this->apps;
+        if ($for_nav===false) return $this->apps;
 
         $out = array();
         foreach($this->apps as $app) {

@@ -14,12 +14,18 @@
     $req['userGivenName']  = "Required";
     $req['userFamilyName'] = "Required";
     $req['userEmail']      = "Required";
+    
 
     $Form->set_required($req);
 
     $validation = array();
     $validation['userEmail']	= array("email", PerchLang::get("Email incomplete or already in use."), array('userID'=>$User->id()));
+
     $validation['userPassword']	= array("password", PerchLang::get("Your passwords must match and meet complexity requirements."), array('user'=>&$User));
+    
+    if (PERCH_PARANOID) {
+        $validation['userPassword'] = array("change_password", PerchLang::get("Your existing password must be correct, and the new passwords must match and meet complexity requirements."), array('user'=>&$User, 'current_password'=>'currentPassword'));
+    }
 
     $Form->set_validation($validation);
 

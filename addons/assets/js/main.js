@@ -224,10 +224,10 @@ $('nav#mobile-menu').mmenu({
     {
       "position": "bottom",
       "content": [
-        "<a class='fa fa-facebook' href='#/'></a>",
-        "<a class='fa fa-twitter' href='#/'></a>",
-        "<a class='fa fa-google-plus' href='#/'></a>",
-        "<a class='fa fa-instagram' href='#/'></a>"
+        "<a class='fa fa-facebook' href='https://www.facebook.com/pages/Bahamas-Visitors-Guide/120321671341479'></a>",
+        "<a class='fa fa-twitter' href='https://twitter.com/bahamasvisitors'></a>",
+        "<a class='fa fa-google-plus' href='https://plus.google.com/u/1/115528778159650507862'></a>",
+        "<a class='fa fa-instagram' href='https://www.instagram.com/bahamasvisitorsguide/'></a>"
       ]
     }
   ]
@@ -239,7 +239,7 @@ $('nav#side-menu').mmenu({
     "border-full"
   ],
   "navbar": {
-    "title": "Island Menu"
+    "title": "More Information"
   },
   "autoHeight": true,
   "offCanvas": {

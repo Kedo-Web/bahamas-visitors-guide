@@ -132,6 +132,7 @@ body.top-search-open #primary-menu>.container>#mobile-menu-logo { opacity: 0; }
   #header.transparent-header { background: none; }
   .one-page-arrow:hover { color: #fff; }
   .one-page-arrow .fadeInDown { -webkit-animation-name: none; animation-name: none; }
+  #subscribe { margin-top: -50px; }
 }
 /* =================================================
     Mobile Phone
@@ -153,4 +154,5 @@ body.top-search-open #primary-menu>.container>#mobile-menu-logo { opacity: 0; }
   #top-search form input { color: #000; }
   .btn.readmore { float: left; }
   ul.entry-extra { float: left; }
+  #subscribe { margin-top: -50px; }
 }

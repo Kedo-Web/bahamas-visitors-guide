@@ -136,12 +136,13 @@ class PerchTemplatedForm
 	    }
 
 	    $attrs = array();
-	    $attrs['id']     = $this->field_prefix.$OpeningTag->id();
-	    $attrs['class']  = $OpeningTag->class();
-	    $attrs['action'] = $OpeningTag->action();
-	    $attrs['method'] = $OpeningTag->method();
-	    $attrs['role']   = $OpeningTag->role();
-	    $attrs['name']   = $OpeningTag->name();
+        $attrs['id']           = $this->field_prefix.$OpeningTag->id();
+        $attrs['class']        = $OpeningTag->class();
+        $attrs['action']       = $OpeningTag->action();
+        $attrs['method']       = $OpeningTag->method();
+        $attrs['role']         = $OpeningTag->role();
+        $attrs['name']         = $OpeningTag->name();
+        $attrs['autocomplete'] = $OpeningTag->autocomplete();
 
 	    $aria = $OpeningTag->search_attributes_for('aria-');
         if (PerchUtil::count($aria)) {
@@ -453,7 +454,7 @@ class PerchTemplatedForm
             $i = 1;
             foreach($opts as $opt) {
                 $thisID = $groupID.$i;
-                $val    = $value;
+                $val    = $opt;
                 $text   = $opt;
 
                 if (strpos($opt, '|')) {
@@ -598,28 +599,29 @@ class PerchTemplatedForm
 	    if (PERCH_HTML5) {
 
 	    	$standard_attributes = array(
-	    		'accept',
-	    		'autocomplete',
-	    		'autofocus',
-	    		'autosave',
-	    		'formaction',
-	    		'formenctype',
-	    		'formmethod',
-	    		'formnovalidate',
-	    		'formtarget',
-	    		'inputmode',
-	    		'list',
-	    		'max',
-	    		'min',
-	    		'minlength',
-	    		'pattern',
-	    		'placeholder',
-	    		'role',
-	    		'selectionDirection',
-	    		'spellcheck',
-	    		'step',
-	    		'type',
-	    		'wrap',
+                'accept',
+                'autocomplete',
+                'autofocus',
+                'autosave',
+                'formaction',
+                'formenctype',
+                'formmethod',
+                'formnovalidate',
+                'formtarget',
+                'hidden',
+                'inputmode',
+                'list',
+                'max',
+                'min',
+                'minlength',
+                'pattern',
+                'placeholder',
+                'role',
+                'selectionDirection',
+                'spellcheck',
+                'step',
+                'type',
+                'wrap',
 	    		);
 
 	    	foreach($standard_attributes as $att) {

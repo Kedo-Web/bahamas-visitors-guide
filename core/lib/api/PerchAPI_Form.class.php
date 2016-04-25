@@ -242,7 +242,12 @@ class PerchAPI_Form extends PerchForm
         if (!$values) $values = array();
 
         $out .= '<fieldset>';
-        $out .= '<div class="wrapped checkboxes '.$container_class.'"><strong>'.PerchUtil::html($this->Lang->get($label)).'</strong>';
+        $out .= '<div class="wrapped checkboxes '.$container_class.'">';
+        
+        if ($label!==false) {
+            $out .= '<strong>'.PerchUtil::html($this->Lang->get($label)).'</strong>';
+        }
+        
         $i = 0;
 
         foreach($options as $option) {

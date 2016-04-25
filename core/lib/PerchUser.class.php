@@ -9,22 +9,33 @@ class PerchUser extends PerchBase
 
     public $msg;
 
-    public function send_welcome_email()
+    public function send_welcome_email($token_mode=false)
     {
         $sender_name = PERCH_EMAIL_FROM_NAME;
 
-        $Email = new PerchEmail('user-welcome.html');
+        if ($token_mode) {
+            $Email = new PerchEmail('user-welcome-token.html');
+        }else{
+            $Email = new PerchEmail('user-welcome.html');
+        }
 
         $Email->recipientEmail($this->userEmail());
         $Email->senderName($sender_name);
         $Email->senderEmail(PERCH_EMAIL_FROM);
 
         $Email->set('username', $this->userUsername());
-        $Email->set('password', $this->clear_pwd());
+        
         $Email->set('givenname', $this->userGivenName());
         $Email->set('familyname', $this->userFamilyName());
         $Email->set('sendername', $sender_name);
-        $Email->set('url', 'http://' . $_SERVER['HTTP_HOST'] . PERCH_LOGINPATH);
+        $Email->set('url', PerchUtil::url_to_ssl_if_needed('http://' . $_SERVER['HTTP_HOST'] . PERCH_LOGINPATH));
+
+        if ($token_mode) {
+            $token = $this->create_recovery_token();
+            $Email->set('url', PerchUtil::url_to_ssl_if_needed('http://' . $_SERVER['HTTP_HOST'] . PERCH_LOGINPATH.'/core/reset/?token='.$token.'&new=1'));
+        }else{
+            $Email->set('password', $this->clear_pwd());
+        }
 
         $Email->send();
     }
@@ -43,7 +54,26 @@ class PerchUser extends PerchBase
         $Email->set('givenname', $this->userGivenName());
         $Email->set('familyname', $this->userFamilyName());
         $Email->set('sendername', PERCH_EMAIL_FROM_NAME);
-        $Email->set('url', 'http://' . $_SERVER['HTTP_HOST'] . PERCH_LOGINPATH.'/core/reset/?token='.$token);
+        $Email->set('url', PerchUtil::url_to_ssl_if_needed('http://' . $_SERVER['HTTP_HOST'] . PERCH_LOGINPATH.'/core/reset/?token='.$token));
+
+        return $Email->send();
+    }
+
+    public function send_lockout_email()
+    {
+        $token = $this->create_recovery_token();
+
+        $Email = new PerchEmail('account-lockout.html');
+
+        $Email->recipientEmail($this->userEmail());
+        $Email->senderName(PERCH_EMAIL_FROM_NAME);
+        $Email->senderEmail(PERCH_EMAIL_FROM);
+
+        $Email->set('username', $this->userUsername());
+        $Email->set('givenname', $this->userGivenName());
+        $Email->set('familyname', $this->userFamilyName());
+        $Email->set('sendername', PERCH_EMAIL_FROM_NAME);
+        $Email->set('url', PerchUtil::url_to_ssl_if_needed('http://' . $_SERVER['HTTP_HOST'] . PERCH_LOGINPATH.'/core/reset/?token='.$token));
 
         return $Email->send();
     }
@@ -64,12 +94,19 @@ class PerchUser extends PerchBase
         $data = array();
         $data['userPassword'] = $Hasher->HashPassword($new_password);
         $data['userPasswordTokenExpires'] = date('Y-m-d H:i:s');
+        $data['userLastFailedLogin'] = null;
+        $data['userFailedLoginAttempts'] = 0;
 
         $this->update($data);
 
         return true;
     }
 
+    public function validate_password($clear_pwd)
+    {
+        $Hasher = PerchUtil::get_password_hasher();
+        return $Hasher->CheckPassword($clear_pwd, $this->userPassword());
+    }
 
     public function reset_pwd_and_notify()
     {
