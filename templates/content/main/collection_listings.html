@@ -1,9 +1,27 @@
 <div class="ipost clearfix bottommargin-sm" name="">
   <div class="col_half nobottommargin">
     <div class="entry-image">
-      <a href="<perch:content id="link" type="text" label="Link"/>" target="_blank" name="<perch:content id="anchor-slug" type="slug" label="Anchor Slug" for="listing-title" editable="true" indelible="true" />">
-        <img class="image_fade" src="<perch:content id="image" type="image" label="Image" required="true" />" alt="<perch:content id="listing-title" type="text" label="Listing Title" title="true" required="true" />">
-      </a>
+
+      <p style="display:none;"><perch:content id="more-images" type="select" label="Corresponding Listings" options="No, Yes" /></p>
+      <perch:if id="more-images" value="Yes">
+        <div class="fslider" data-arrows="false" data-speed="400" data-pause="4000">
+          <div class="flexslider">
+            <div class="slider-wrap">
+              <perch:repeater id="images" label="Slider Images">
+                <div class="slide">
+                  <a href="<perch:content id="link" type="text" label="Link"/>" target="_blank" name="<perch:content id="anchor-slug" type="slug" label="Anchor Slug" for="listing-title" editable="true" />">
+                      <img class="image_fade" src="<perch:content id="image" type="image" label="Image" required="true" />" alt="<perch:content id="listing-title" type="text" label="Listing Title" title="true" required="true" />">
+                  </a>
+                </div>
+              </perch:repeater>
+            </div>
+          </div>
+        </div>
+      <perch:else />
+        <a href="<perch:content id="link" type="text" label="Link"/>" target="_blank" name="<perch:content id="anchor-slug" type="slug" label="Anchor Slug" for="listing-title" editable="true" />">
+          <img class="image_fade" src="<perch:content id="image" type="image" label="Image" required="true" />" alt="<perch:content id="listing-title" type="text" label="Listing Title" title="true" required="true" />">
+        </a>
+      </perch:if>
     </div>
   </div>
   <div class="col_half nobottommargin col_last">

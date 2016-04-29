@@ -1,49 +1,51 @@
-<perch:form id="template-contactform" method="post" app="perch_forms" class="nobottommargin"  name="template-contactform">
-  <div class="form-process"></div>
+<perch:form id="contactform" method="post" app="perch_forms" class="nobottommargin"  name="contactform" role="form">
 
   <div class="col_one_third">
-    <perch:label for="template-contactform-name">Name <small>*</small></perch:label>
-    <perch:input type="text" id="template-contactform-name" name="template-contactform-name" required="true" label="Name" value="" class="sm-form-control required" />
-    <perch:error for="template-contactform-name" type="required">Please enter your name</perch:error>
+    <perch:label for="name">Name <small>*</small></perch:label>
+    <perch:input type="text" id="name" name="name" required="true" label="Name" value="" class="sm-form-control required" />
+    <perch:error for="name" type="required">Please enter your name</perch:error>
   </div>
 
   <div class="col_one_third">
-    <perch:label for="template-contactform-email">Email <small>*</small></perch:label>
-    <perch:input type="email" id="template-contactform-email" name="template-contactform-email" required="true" label="Email" value="" class="required email sm-form-control" />
-    <perch:error for="template-contactform-email" type="required">Please enter your email address</perch:error>
-    <perch:error for="template-contactform-email" type="format">Please check your email address</perch:error>
+    <perch:label for="email">Email <small>*</small></perch:label>
+    <perch:input type="email" id="email" name="email" required="true" label="Email" value="" class="required email sm-form-control" />
+    <perch:error for="email" type="required">Please enter your email address</perch:error>
+    <perch:error for="email" type="format">Please check your email address</perch:error>
   </div>
 
   <div class="col_one_third col_last">
-    <perch:label for="template-contactform-phone">Phone</perch:label>
-    <perch:input type="text" id="template-contactform-phone" name="template-contactform-phone" label="Name" value="" class="sm-form-control" />
+    <perch:label for="phone">Phone</perch:label>
+    <perch:input type="text" id="phone" name="phone" label="Name" value="" class="sm-form-control" />
   </div>
 
   <div class="clear"></div>
 
   <div class="col_two_third">
-    <perch:label for="template-contactform-subject">Subject <small>*</small></perch:label>
-    <perch:input type="text" id="template-contactform-subject" name="template-contactform-subject" required="true" label="Subject" value="" class="sm-form-control required" />
-    <perch:error for="template-contactform-subject" type="required">Please enter a subject</perch:error>
+    <perch:label for="subject">Subject <small>*</small></perch:label>
+    <perch:input type="text" id="subject" name="subject" required="true" label="Subject" value="" class="sm-form-control required" />
+    <perch:error for="subject" type="required">Please enter a subject</perch:error>
   </div>
 
   <div class="clear"></div>
 
   <div class="col_full">
-    <perch:label for="template-contactform-message">Message <small>*</small></perch:label>
-    <perch:input type="textarea" id="template-contactform-message" required="true" name="template-contactform-message" label="Message" rows="6" cols="30" class="required sm-form-control" />
-    <perch:error for="template-contactform-message" type="required">Please type a message</perch:error>
+    <perch:label for="message">Message <small>*</small></perch:label>
+    <perch:input type="textarea" id="message" required="true" name="message" label="Message" rows="6" cols="30" class="required sm-form-control" />
+    <perch:error for="message" type="required">Please type a message</perch:error>
   </div>
 
   <div class="col_full hidden">
-    <perch:input type="text" id="template-contactform-botcheck" name="template-contactform-botcheck" value="" class="sm-form-control" />
+    <perch:input type="text" id="botcheck" name="botcheck" value="" class="sm-form-control" />
   </div>
 
   <div class="col_full">
-    <perch:input type="submit" id="template-contactform-submit" name="template-contactform-submit" value="Send Message" class="button button-3d nomargin" />
+    <perch:input type="submit" id="submit" name="submit" value="Send Message" class="button button-3d nomargin" />
   </div>
 
   <perch:success>
-    <perch:content id="success" type="textarea" label="Thank you message" textile="true" editor="markitup" />
+    <div id="contact-form-result" class="alert success">
+      <p><i class="fa fa-check"></i> Thank you for contacting us. We will get back to you shortly.</p>
+    </div>
   </perch:success>
+
 </perch:form>

@@ -2,6 +2,8 @@
   perch_layout('global/header', array(
     'body-class' => 'stretched sticky-responsive-menu',
   ));
+
+  $menu = perch_page_attribute('navgroup', [], true);
 ?>
 
 <!-- Header ============================================= -->
@@ -73,10 +75,15 @@
       <!-- Post Content ============================================= -->
       <div class="postcontent nobottommargin clearfix">
         <div class="hideDesktop">
-          <?php perch_pages_breadcrumbs(); ?>
-          <a id="mmenu-btn2" href="#side-menu" class="hideDesktop"><span>More</span> <i class="fa fa-info-circle"></i></a>
+          <?php
+            perch_pages_breadcrumbs();
+            if($menu != '') { ?>
+              <a id="mmenu-btn2" href="#side-menu" class="hideDesktop"><span>More</span> <i class="fa fa-info-circle"></i></a>
+              <?php
+            }
+          ?>
         </div>
-        <h2><?php perch_content('Page Title'); ?></h2>
+        <?php perch_content('Page Title'); ?>
         <?php perch_content('Featured Area 1'); ?>
         <?php perch_content('Featured Area 2'); ?>
         <?php perch_content('Featured Area 3'); ?>
@@ -121,9 +128,10 @@
       <!-- Sidebar ============================================= -->
       <div class="sidebar nobottommargin col_last clearfix">
         <div class="sidebar-widgets-wrap">
-          <div class="widget widget_links clearfix">
-
-            <h4 class="hideMobile">More Information</h4>
+          <div class="widget widget_links clearfix hideMobile">
+            <?php if($menu != '') { ?>
+              <h4 class="hideMobile">More Information</h4>
+            <?php } ?>
             <nav class="hideMobile">
               <?php
                 $navgroup = perch_page_attribute('navgroup', [], true);
@@ -141,15 +149,13 @@
                 'flat' => false
               )); ?>
             </nav>
-
-            <?php perch_content('Sidebar Area 1'); ?>
-            <?php perch_content('Sidebar Area 2'); ?>
-            <?php perch_content('Sidebar Area 3'); ?>
-            <?php perch_content('Sidebar Area 4'); ?>
-            <?php perch_content('Sidebar Area 5'); ?>
-            <?php perch_content('Sidebar Area 6'); ?>
-
           </div>
+          <?php perch_content('Sidebar Area 1'); ?>
+          <?php perch_content('Sidebar Area 2'); ?>
+          <?php perch_content('Sidebar Area 3'); ?>
+          <?php perch_content('Sidebar Area 4'); ?>
+          <?php perch_content('Sidebar Area 5'); ?>
+          <?php perch_content('Sidebar Area 6'); ?>
         </div>
       </div>
 

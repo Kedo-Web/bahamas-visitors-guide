@@ -28828,7 +28828,8 @@ html.mm-opened.mm-dragging .mm-slideout {
   padding: 0 40px; }
 
 .mm-close:after {
-  content: 'x'; }
+  /*content: 'x'; */
+}
 
 .mm-navbar[class*="mm-navbar-content-"] > * {
   box-sizing: border-box;

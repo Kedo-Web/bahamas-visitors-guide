@@ -4,6 +4,8 @@
 .col_one_third.col_last .social-icon .fa.fa-fw { padding: 9px 0px 18px 5px; }
 div#instagram { margin-top: 0px; }
 div#twitter { margin-top: 0px; }
+p { margin-bottom: 10px; }
+h1, h2, h3, h4, h5 { margin-bottom: 20px; }
 
 #header.transparent-header {
   background: rgba(0,0,0,0.3); /* For browsers that do not support gradients */
@@ -21,7 +23,7 @@ div#twitter { margin-top: 0px; }
 
 .sticky-header #primary-menu.style-2 a#mobile-menu-logo { display: block !important; }
 .sticky-header #primary-menu.style-2 a#mobile-menu-logo img { height: 65px; padding: 10px 0; float: left; }
-.sticky-header #primary-menu.style-2 ul { margin-left: 470px; }
+.sticky-header #primary-menu.style-2 ul { margin-left: 650px; }
 .sticky-header #primary-menu.style-2 ul { border-right: 1px solid #ccc; padding-right: 10px; }
 
 .table { text-align: center; vertical-align: middle; }
@@ -92,8 +94,13 @@ body.top-search-open #primary-menu>.container>#mobile-menu-logo { opacity: 0; }
 /* =============== */
 
 .btn.readmore { float: right; margin-top: 10px; }
-.line { margin: 30px 0 60px; }
+.line { margin: 20px 0 40px; }
 /*.owl-carousel { display: block; }*/
+#mobileAd { display: none !important; }
+#coming-soon a { position: relative; left: 50%; margin-left: -80px; }
+#contact-form-result.success { background-color: #1F9456; color: #fff; }
+ul#requirements { margin-left: 20px; }
+.fbox-desc .location { font-weight: normal; font-size: 14px; }
 
 /* =================================================
     Full Size Tablet
@@ -102,6 +109,8 @@ body.top-search-open #primary-menu>.container>#mobile-menu-logo { opacity: 0; }
   #slider.boxed-slider .container { width: 100% !important; }
   #content .container { width: 95% !important; }
   .hideDesktop, #mobile-nav { display: block; }
+  #slider .hideDesktop { display: none; }
+  #slider .hideMobile { display: block; }
   .hideMobile { display: none; }
   #top-search.no-home i { padding: 10px 0 10px 10px; }
   #top-search.no-home form input { padding-top: 20px; }
@@ -133,11 +142,17 @@ body.top-search-open #primary-menu>.container>#mobile-menu-logo { opacity: 0; }
   .one-page-arrow:hover { color: #fff; }
   .one-page-arrow .fadeInDown { -webkit-animation-name: none; animation-name: none; }
   #subscribe { margin-top: -50px; }
+  #desktopAd { display: block !important; }
+  #mobileAd { display: none !important; }
+  .postcontent, .postcontent.bothsidebar, .sidebar { border-bottom: none; }
+  .postcontent { margin-bottom: 0 !important; padding-bottom: 0 !important; }
 }
 /* =================================================
     Mobile Phone
 ================================================= */
 @media (max-width: 480px) {
+  #slider .hideDesktop { display: block; }
+  #slider .hideMobile { display: none; }
   nav#mobile-menu a { font-size: 16px; }
   .mm-listview { line-height: 20px; }
   #logo img { height: 75px; margin-top: 15px; }
@@ -155,4 +170,6 @@ body.top-search-open #primary-menu>.container>#mobile-menu-logo { opacity: 0; }
   .btn.readmore { float: left; }
   ul.entry-extra { float: left; }
   #subscribe { margin-top: -50px; }
+  #desktopAd { display: none !important; }
+  #mobileAd { display: block !important; }
 }

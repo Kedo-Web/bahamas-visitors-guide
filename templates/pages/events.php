@@ -125,11 +125,15 @@
 
             <h4>View By Island</h4>
             <nav class="left">
-              <?php perch_pages_navigation(array(
-                'navgroup' => 'events',
-                'template' => 'sidebar_menu.html',
-                'levels' => 1
-              )); ?>
+              <?php
+              $navgroup = perch_page_attribute('navgroup', [], true);
+              if($navgroup) {
+                perch_pages_navigation(array(
+                  'navgroup' => $navgroup,
+                  'template' => 'sidebar_menu.html',
+                ));
+              }
+              ?>
             </nav>
 
           </div>
