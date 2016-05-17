@@ -13930,8 +13930,8 @@ body:not(.device-touch) .social-icon i {
 .si-colored.si-smashmag {
   background-color: #E53B2C !important; }
 
-.si-gplus:hover,
-.si-colored.si-gplus {
+.si-google-plus:hover,
+.si-colored.si-google-plus {
   background-color: #DD4B39 !important; }
 
 .si-wikipedia:hover,
@@ -14222,7 +14222,7 @@ body:not(.device-touch) .social-icon i {
 .si-text-color.si-smashmag i {
   color: #E53B2C; }
 
-.si-text-color.si-gplus i {
+.si-text-color.si-google-plus i {
   color: #DD4B39; }
 
 .si-text-color.si-wikipedia i {
@@ -19224,7 +19224,7 @@ body:not(.no-transition) #wrapper,
 .icon-smashmag:before {
   content: "\e837"; }
 
-.icon-gplus:before {
+.icon-google-plus:before {
   content: "\e838"; }
 
 .icon-wikipedia:before {

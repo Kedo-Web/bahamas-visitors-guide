@@ -5,13 +5,12 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
   	<title><?php perch_pages_title(); ?></title>
-  	<?php
-      perch_page_attribute('description');
-      perch_page_attribute('keywords');
-      perch_page_attribute('robots');
-    ?>
+    <meta name="description" content="<?php perch_page_attribute('description'); ?>">
+    <meta name="keywords" content="<?php perch_page_attribute('keywords'); ?>">
+    <meta name="robots" content="<?php perch_page_attribute('robots'); ?>">
     <link href="http://fonts.googleapis.com/css?family=Lato:300,400,400italic,600,700|Raleway:300,400,500,600,700|Crete+Round:400italic" rel="stylesheet" type="text/css" />
-    <link href="/bvg-admin/addons/assets/css/font-awesome.min.css" rel="stylesheet">
+    <!--<link href="/bvg-admin/addons/assets/css/font-awesome.min.css" rel="stylesheet">-->
+    <script src="https://use.fontawesome.com/217b7a0421.js"></script>
     <link href="/bvg-admin/addons/assets/css/vendor.css" rel="stylesheet">
     <link href="/bvg-admin/addons/assets/css/main.css" rel="stylesheet">
     <?php

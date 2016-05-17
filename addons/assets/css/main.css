@@ -1,5 +1,5 @@
-.social-icon .fa { padding: 7px; }
-.social-icon .fa.fa-fw { padding: 9px; }
+.social-icon .fa { padding: 8px 5px; }
+.social-icon .fa.fa-fw { padding-top: 9px; }
 .col_one_third.col_last .social-icon .fa { padding: 0 0 0 2px; }
 .col_one_third.col_last .social-icon .fa.fa-fw { padding: 9px 0px 18px 5px; }
 div#instagram { margin-top: 0px; }
@@ -102,6 +102,8 @@ body.top-search-open #primary-menu>.container>#mobile-menu-logo { opacity: 0; }
 ul#requirements { margin-left: 20px; }
 .fbox-desc .location { font-weight: normal; font-size: 14px; }
 
+.ipost .entry-image img { border: 1px solid #ddd; }
+
 /* =================================================
     Full Size Tablet
 ================================================= */
@@ -172,4 +174,5 @@ ul#requirements { margin-left: 20px; }
   #subscribe { margin-top: -50px; }
   #desktopAd { display: none !important; }
   #mobileAd { display: block !important; }
+  .events .entry-image .entry-date { width: 100%; }
 }
