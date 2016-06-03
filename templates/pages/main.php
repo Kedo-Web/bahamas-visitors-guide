@@ -100,7 +100,7 @@
             perch_collection('Listings', array(
               'template' => 'main/collection_listings.html',
               'sort-order' => 'RAND',
-              'count' => 5,
+              'count' => 10,
               'paginate' => true,
               'filter' => 'islands.name',
               'match' => 'eq',
@@ -112,7 +112,7 @@
             perch_collection('Listings', array(
               'template' => 'main/collection_listings.html',
               'sort-order' => 'RAND',
-              'count' => 5,
+              'count' => 10,
               'paginate' => true,
               'category' => 'industry/'.$category.'/'.$subcategory,
             ));
