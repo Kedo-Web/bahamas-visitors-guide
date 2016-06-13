@@ -17,6 +17,9 @@
       if (perch_layout_has('css-calendar')) {
         echo '<link href="/bvg-admin/addons/assets/css/calendar.css" rel="stylesheet">';
       }
+      if (perch_layout_has('css-gallery')) {
+        echo '<link href="/bvg-admin/addons/assets/css/gallery.css" rel="stylesheet">';
+      }
     ?>
     <link rel="shortcut icon" type="image/ico" href="/bvg-admin/extras/img/template/favicon.jpg" />
   </head>
