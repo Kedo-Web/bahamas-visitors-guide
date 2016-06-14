@@ -1,5 +1,6 @@
 <?php
   perch_layout('global/header', array(
+    'css-gallery' => true,
     'body-class' => 'stretched sticky-responsive-menu',
   ));
 ?>
@@ -34,17 +35,22 @@
           </a>
           <?php perch_search_form(array(
 						'template'	=> 'my-search-form.html',
+
 					)); ?>
         </div><!-- #top-search end -->
       </div>
     </nav><!-- #primary-menu end -->
   </div>
 </header><!-- #header end -->
-<?php 
- // perch_gallery_album_details('Testing-1');
+<?php
+  // perch_gallery_album_details('Testing-1', array(
+  //   'skip-template' => false,
+  //   'filter' => 'image',
+  // ));
+  // perch_gallery_images();
  // perch_gallery_albums();
  // $albumSlug = $album[0]['album'];
- // perch_gallery_album($albumSlug);;
+
  // print_r($album);
 ?>
 <!--=======================================================-->
@@ -74,10 +80,10 @@
               <!-- Portfolio Items
               ============================================= -->
               <div id="portfolio" class="clearfix">
-              <?php 
+              <?php
               $album = perch_page_attribute('ialbum', [], true);
-              print_r($album);
-              perch_gallery_album_images($album);
+              // print_r($album);
+              // perch_gallery_album_images($album);
 
               // perch_gallery_albums();
               perch_gallery_album_images($album, array(
